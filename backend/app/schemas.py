@@ -484,6 +484,7 @@ class AttendanceResponse(BaseModel):
     status: Optional[str]
     out_status: Optional[str]
     worked_hours: float
+    night_hours: Optional[float] = 0.0  # Hours worked after 22:00
     overtime_hours: float
     break_minutes: int
     notes: Optional[str]

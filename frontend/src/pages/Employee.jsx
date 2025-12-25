@@ -24,7 +24,7 @@ import api, {
 } from '../services/api';
 import {
   Plus, Clock, CheckCircle, XCircle, ChevronLeft, ChevronRight, Calendar,
-  CalendarDays, MessageSquare, UserCheck, Mail, MailOpen, AlertCircle, LogOut, Trash2, X, Download
+  CalendarDays, MessageSquare, UserCheck, Mail, MailOpen, AlertCircle, LogOut, Trash2, X, Download, RefreshCw
 } from 'lucide-react';
 
 // =============== EMPLOYEE PAGES ===============
@@ -37,6 +37,9 @@ const EmployeeDashboardHome = ({ user }) => {
 
   useEffect(() => {
     loadData();
+    // Auto-refresh dashboard data every 30 seconds to catch schedule updates
+    const interval = setInterval(loadData, 30000);
+    return () => clearInterval(interval);
   }, []);
 
   const loadData = async () => {
@@ -67,30 +70,29 @@ const EmployeeDashboardHome = ({ user }) => {
     <div>
       <Header title="Employee Dashboard" subtitle={`Welcome back, ${user.full_name}`} />
       <div className="p-6">
+        <div className="mb-6 flex justify-end">
+          <Button 
+            variant="outline" 
+            size="sm"
+            onClick={loadData}
+            className="flex items-center gap-2"
+          >
+            <RefreshCw className="w-4 h-4" />
+            Refresh
+          </Button>
+        </div>
         {/* Paid Leave Notification */}
         {leaveStats && leaveStats.taken_paid_leave <= 1 && (
           <div className="mb-6">
-            {leaveStats.taken_paid_leave <= 0 ? (
-              <div className="p-4 bg-blue-50 border border-blue-200 rounded-lg flex items-start gap-3">
-                <AlertCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
-                <div className="flex-1">
-                  <p className="font-semibold text-blue-900">Paid Leave Available</p>
-                  <p className="text-sm text-blue-700 mt-1">
-                    You have not taken any paid leave yet. You have <strong>{leaveStats.available_paid_leave}</strong> paid leave days remaining. You can use that for your rest days.
-                  </p>
-                </div>
+            <div className="p-4 bg-blue-50 border border-blue-200 rounded-lg flex items-start gap-3">
+              <AlertCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+              <div className="flex-1">
+                <p className="font-semibold text-blue-900">Paid Leave Status</p>
+                <p className="text-sm text-blue-700 mt-1">
+                  You have taken <strong>{leaveStats.taken_paid_leave}</strong> day{leaveStats.taken_paid_leave > 1 ? 's' : ''} of paid leave. You have <strong>{leaveStats.available_paid_leave}</strong> day{leaveStats.available_paid_leave > 1 ? 's' : ''} paid leave available.
+                </p>
               </div>
-            ) : (
-              <div className="p-4 bg-amber-50 border border-amber-200 rounded-lg flex items-start gap-3">
-                <AlertCircle className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
-                <div className="flex-1">
-                  <p className="font-semibold text-amber-900">Paid Leave Status</p>
-                  <p className="text-sm text-amber-700 mt-1">
-                    You have taken <strong>1 day</strong> of paid leave only. You have <strong>{leaveStats.available_paid_leave}</strong> days left to use.
-                  </p>
-                </div>
-              </div>
-            )}
+            </div>
           </div>
         )}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
@@ -174,6 +176,9 @@ const EmployeeCheckIn = ({ user }) => {
 
   useEffect(() => {
     loadSchedule();
+    // Auto-refresh schedule every 30 seconds to catch manager updates
+    const interval = setInterval(loadSchedule, 30000);
+    return () => clearInterval(interval);
   }, []);
 
   const loadSchedule = async () => {
@@ -369,6 +374,9 @@ const EmployeeSchedule = () => {
 
   useEffect(() => {
     loadSchedules();
+    // Auto-refresh schedule every 30 seconds to catch manager updates
+    const interval = setInterval(loadSchedules, 30000);
+    return () => clearInterval(interval);
   }, [currentMonth]);
 
   const loadSchedules = async () => {
@@ -403,6 +411,15 @@ const EmployeeSchedule = () => {
                 <ChevronRight className="w-4 h-4" />
               </Button>
             </div>
+            <Button 
+              variant="outline" 
+              size="sm" 
+              onClick={loadSchedules}
+              className="flex items-center gap-2"
+            >
+              <RefreshCw className="w-4 h-4" />
+              Refresh
+            </Button>
           </div>
           {schedules.length === 0 ? (
             <div className="text-center py-12">
@@ -412,25 +429,79 @@ const EmployeeSchedule = () => {
             </div>
           ) : (
             <div className="space-y-4">
-              {schedules.map((schedule) => (
-                <div key={schedule.id} className="border border-gray-200 rounded-lg p-4 hover:border-blue-300 hover:bg-blue-50 transition-colors">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <p className="font-semibold text-gray-900">
-                        {format(new Date(schedule.date), 'EEEE, MMMM dd, yyyy')}
-                      </p>
-                      <p className="text-sm text-gray-600 mt-1">
-                        {schedule.start_time} - {schedule.end_time}
-                      </p>
-                    </div>
-                    <div className="text-right">
-                      <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">
-                        Scheduled
-                      </span>
+              {schedules.map((schedule) => {
+                // Determine status color and label
+                const getStatusColor = (status) => {
+                  switch (status) {
+                    case 'scheduled':
+                      return 'bg-blue-100 text-blue-800';
+                    case 'leave':
+                      return 'bg-orange-100 text-orange-800';
+                    case 'leave_half_morning':
+                      return 'bg-yellow-100 text-yellow-800';
+                    case 'leave_half_afternoon':
+                      return 'bg-amber-100 text-amber-800';
+                    case 'comp_off_earned':
+                      return 'bg-green-100 text-green-800';
+                    case 'comp_off_taken':
+                      return 'bg-purple-100 text-purple-800';
+                    default:
+                      return 'bg-gray-100 text-gray-800';
+                  }
+                };
+
+                const getStatusLabel = (status) => {
+                  switch (status) {
+                    case 'scheduled':
+                      return 'Scheduled';
+                    case 'leave':
+                      return 'Leave (Full Day)';
+                    case 'leave_half_morning':
+                      return 'Leave (Half - Morning)';
+                    case 'leave_half_afternoon':
+                      return 'Leave (Half - Afternoon)';
+                    case 'comp_off_earned':
+                      return 'Comp-Off Earned';
+                    case 'comp_off_taken':
+                      return 'Comp-Off Taken';
+                    default:
+                      return status;
+                  }
+                };
+
+                const getTimeDisplay = (schedule) => {
+                  // For leaves and comp-off taken, don't show times
+                  if (schedule.status === 'leave' || 
+                      schedule.status === 'leave_half_morning' || 
+                      schedule.status === 'leave_half_afternoon' ||
+                      schedule.status === 'comp_off_taken') {
+                    return '-';
+                  }
+                  // For other statuses, show times if available
+                  if (!schedule.start_time || !schedule.end_time) return '-';
+                  return `${schedule.start_time} - ${schedule.end_time}`;
+                };
+
+                return (
+                  <div key={schedule.id} className="border border-gray-200 rounded-lg p-4 hover:border-blue-300 hover:bg-blue-50 transition-colors">
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <p className="font-semibold text-gray-900">
+                          {format(new Date(schedule.date + 'T00:00:00'), 'EEEE, MMMM dd, yyyy')}
+                        </p>
+                        <p className="text-sm text-gray-600 mt-1">
+                          {getTimeDisplay(schedule)}
+                        </p>
+                      </div>
+                      <div className="text-right">
+                        <span className={`px-3 py-1 rounded-full text-sm font-medium ${getStatusColor(schedule.status)}`}>
+                          {getStatusLabel(schedule.status)}
+                        </span>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           )}
         </Card>
@@ -974,6 +1045,37 @@ const EmployeeAttendance = () => {
               <span>{downloading ? 'Downloading...' : 'Download Report'}</span>
             </Button>
           </div>
+
+          {/* Monthly Summary Stats */}
+          {attendance.length > 0 && (
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
+              <div>
+                <p className="text-xs text-gray-600 mb-1">Total Hours</p>
+                <p className="text-lg font-bold text-blue-600">
+                  {(attendance.reduce((sum, r) => sum + (r.worked_hours || 0), 0)).toFixed(2)}h
+                </p>
+              </div>
+              <div>
+                <p className="text-xs text-gray-600 mb-1">Night Hours (22:00+)</p>
+                <p className="text-lg font-bold text-purple-600">
+                  {(attendance.reduce((sum, r) => sum + (r.night_hours || 0), 0)).toFixed(2)}h
+                </p>
+              </div>
+              <div>
+                <p className="text-xs text-gray-600 mb-1">Overtime Hours</p>
+                <p className="text-lg font-bold text-orange-600">
+                  {(attendance.reduce((sum, r) => sum + (r.overtime_hours || 0), 0)).toFixed(2)}h
+                </p>
+              </div>
+              <div>
+                <p className="text-xs text-gray-600 mb-1">Days Worked</p>
+                <p className="text-lg font-bold text-green-600">
+                  {attendance.filter(r => r.in_time).length}
+                </p>
+              </div>
+            </div>
+          )}
+
           {attendance.length === 0 ? (
             <div className="text-center py-12">
               <Clock className="w-16 h-16 mx-auto text-gray-400 mb-4" />
@@ -988,6 +1090,10 @@ const EmployeeAttendance = () => {
                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Scheduled Time</th>
                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Check-In</th>
                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Check-Out</th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Hours Worked</th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Night Hours</th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Break (min)</th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">OT Hours</th>
                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Status</th>
                   </tr>
                 </thead>
@@ -995,19 +1101,31 @@ const EmployeeAttendance = () => {
                   {attendance.map((record) => (
                     <tr key={record.id} className="hover:bg-gray-50">
                       <td className="px-6 py-4 whitespace-nowrap text-sm">
-                        {format(new Date(record.date), 'MMM dd, yyyy')}
+                        {format(new Date(record.date + 'T00:00:00'), 'MMM dd, yyyy')}
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm">
                         {record.schedule ? `${record.schedule.start_time} - ${record.schedule.end_time}` : '-'}
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm">
+                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
                         {record.in_time ? record.in_time : '-'}
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm">
+                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
                         {record.out_time ? record.out_time : '-'}
                       </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-blue-600 font-medium">
+                        {record.worked_hours ? `${record.worked_hours.toFixed(2)}h` : '-'}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-purple-600 font-medium">
+                        {record.night_hours ? `${record.night_hours.toFixed(2)}h` : '-'}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm">
+                        {record.break_minutes ? `${record.break_minutes}m` : '-'}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-orange-600 font-medium">
+                        {record.overtime_hours ? `${record.overtime_hours.toFixed(2)}h` : '-'}
+                      </td>
                       <td className="px-6 py-4 whitespace-nowrap">
-                        <span className={`px-2 py-1 rounded-full text-xs ${
+                        <span className={`px-2 py-1 rounded-full text-xs font-medium ${
                           record.status === 'onTime' ? 'bg-green-100 text-green-800' :
                           record.status === 'slightlyLate' ? 'bg-yellow-100 text-yellow-800' :
                           record.status === 'late' ? 'bg-orange-100 text-orange-800' :

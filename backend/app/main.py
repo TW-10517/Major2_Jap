@@ -1530,6 +1530,34 @@ async def check_in(
         
         print(f"[CHECK-IN] Employee found: {employee.id}, name: {employee.first_name} {employee.last_name}")
         
+        # Check if employee is on approved leave or comp-off via LeaveRequest
+        leave_result = await db.execute(
+            select(LeaveRequest).filter(
+                LeaveRequest.employee_id == employee.id,
+                LeaveRequest.start_date <= today,
+                LeaveRequest.end_date >= today,
+                LeaveRequest.status == LeaveStatus.APPROVED
+            )
+        )
+        leave_request = leave_result.scalar_one_or_none()
+        if leave_request:
+            error_msg = f"You are on approved {leave_request.leave_type} today. You cannot check in."
+            print(f"[CHECK-IN ERROR] Leave Request block - {error_msg}")
+            raise HTTPException(status_code=400, detail=error_msg)
+        
+        # Also check Schedule table for leave/comp-off status
+        schedule_result = await db.execute(
+            select(Schedule).filter(
+                Schedule.employee_id == employee.id,
+                Schedule.date == today,
+                Schedule.status.in_(['leave', 'comp_off_taken', 'comp_off_earned', 'leave_half_morning', 'leave_half_afternoon'])
+            )
+        )
+        if schedule_result.scalar_one_or_none():
+            error_msg = "You are on leave/comp-off today. You cannot check in."
+            print(f"[CHECK-IN ERROR] Schedule block - {error_msg}")
+            raise HTTPException(status_code=400, detail=error_msg)
+        
         # Check if already checked in
         result = await db.execute(
             select(CheckInOut).filter(
@@ -1957,6 +1985,53 @@ async def get_attendance(
     result = await db.execute(query.order_by(Attendance.date.desc()))
     attendance_records = list(result.scalars().all())
     
+    # If schedules are missing, try to find them by employee_id + date
+    if attendance_records:
+        missing_schedules = []
+        for record in attendance_records:
+            if not record.schedule and record.employee_id and record.date:
+                missing_schedules.append((record.employee_id, record.date))
+        
+        if missing_schedules:
+            # Get all schedules for this date range
+            dates = {date_val for _, date_val in missing_schedules}
+            if dates:
+                min_date = min(dates)
+                max_date = max(dates)
+                
+                schedule_result = await db.execute(
+                    select(Schedule).filter(
+                        Schedule.date >= min_date,
+                        Schedule.date <= max_date
+                    ).order_by(Schedule.status)  # 'scheduled' comes before 'leave'
+                )
+                all_schedules = schedule_result.scalars().all()
+                
+                # Create map of (employee_id, date) -> schedule
+                # Prefer 'scheduled' status over 'leave' status
+                schedule_map = {}
+                for sched in all_schedules:
+                    key = (sched.employee_id, sched.date)
+                    # Only add if not already present, or if this is 'scheduled' and current is not
+                    if key not in schedule_map or (sched.status == 'scheduled' and schedule_map[key].status != 'scheduled'):
+                        schedule_map[key] = sched
+                
+                # Assign schedules to records
+                for record in attendance_records:
+                    if not record.schedule and record.employee_id and record.date:
+                        key = (record.employee_id, record.date)
+                        record.schedule = schedule_map.get(key)
+    
+    # Calculate and populate night_hours if not already set
+    for record in attendance_records:
+        if record.in_time and record.out_time and not record.night_hours:
+            record.night_hours = calculate_night_hours(record.in_time, record.out_time, night_start_hour=22)
+        
+        # If schedule is a leave/comp-off, clear the times for employees viewing
+        if current_user.user_type == UserType.EMPLOYEE and record.schedule and record.schedule.status in ['leave', 'comp_off_taken', 'comp_off_earned']:
+            record.schedule.start_time = None
+            record.schedule.end_time = None
+    
     return attendance_records
 
 
@@ -2107,10 +2182,13 @@ async def export_monthly_attendance(
     department_id: int,
     year: int,
     month: int,
+    employment_type: Optional[str] = None,
     current_user: User = Depends(get_current_active_user),
     db: AsyncSession = Depends(get_db)
 ):
-    """Export monthly attendance report as Excel"""
+    """Export monthly attendance report as Excel
+    employment_type: Optional filter - 'full_time', 'part_time', or None for all
+    """
     try:
         # Check authorization: only admins can download any department, managers only their own
         if current_user.user_type == UserType.MANAGER:
@@ -2129,10 +2207,12 @@ async def export_monthly_attendance(
         if not department:
             raise HTTPException(status_code=404, detail="Department not found")
 
-        # Get employees in department
-        emp_result = await db.execute(
-            select(Employee).filter(Employee.department_id == department_id, Employee.is_active == True)
-        )
+        # Get employees in department with optional employment_type filter
+        emp_query = select(Employee).filter(Employee.department_id == department_id, Employee.is_active == True)
+        if employment_type and employment_type in ['full_time', 'part_time']:
+            emp_query = emp_query.filter(Employee.employment_type == employment_type)
+        
+        emp_result = await db.execute(emp_query)
         employees = emp_result.scalars().all()
 
         # Get attendance for the month
@@ -2452,7 +2532,9 @@ async def export_monthly_attendance(
         return StreamingResponse(
             iter([file_bytes.getvalue()]),
             media_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-            headers={"Content-Disposition": f"attachment; filename={department.name}_attendance_{year}-{month:02d}.xlsx"}
+            headers={
+                "Content-Disposition": f"attachment; filename={department.name}_attendance_{year}-{month:02d}{'_' + employment_type if employment_type else ''}.xlsx"
+            }
         )
     except Exception as e:
         print(f"Export error: {str(e)}")
@@ -2782,10 +2864,13 @@ async def export_weekly_attendance(
     department_id: int,
     start_date: date,
     end_date: date,
+    employment_type: Optional[str] = None,
     current_user: User = Depends(get_current_active_user),
     db: AsyncSession = Depends(get_db)
 ):
-    """Export weekly attendance report as Excel"""
+    """Export weekly attendance report as Excel
+    employment_type: Optional filter - 'full_time', 'part_time', or None for all
+    """
     try:
         # Check authorization: only admins can download any department, managers only their own
         if current_user.user_type == UserType.MANAGER:
@@ -2804,10 +2889,12 @@ async def export_weekly_attendance(
         if not department:
             raise HTTPException(status_code=404, detail="Department not found")
         
-        # Get employees in department
-        emp_result = await db.execute(
-            select(Employee).filter(Employee.department_id == department_id, Employee.is_active == True)
-        )
+        # Get employees in department with optional employment_type filter
+        emp_query = select(Employee).filter(Employee.department_id == department_id, Employee.is_active == True)
+        if employment_type and employment_type in ['full_time', 'part_time']:
+            emp_query = emp_query.filter(Employee.employment_type == employment_type)
+        
+        emp_result = await db.execute(emp_query)
         employees = emp_result.scalars().all()
         
         # Get attendance for the week
@@ -3027,13 +3114,63 @@ async def export_weekly_attendance(
         return StreamingResponse(
             iter([file_bytes.getvalue()]),
             media_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-            headers={"Content-Disposition": f"attachment; filename={department.name}_attendance_{start_date.isoformat()}_to_{end_date.isoformat()}.xlsx"}
+            headers={
+                "Content-Disposition": f"attachment; filename={department.name}_attendance_weekly_{start_date.isoformat()}_to_{end_date.isoformat()}{'_' + employment_type if employment_type else ''}.xlsx"
+            }
         )
     except Exception as e:
         print(f"Weekly export error: {str(e)}")
         import traceback
         traceback.print_exc()
         raise HTTPException(status_code=500, detail=f"Export failed: {str(e)}")
+
+
+def calculate_night_hours(in_time_str, out_time_str, night_start_hour=22):
+    """Calculate hours worked after the night_start_hour (default 22:00)
+    Returns night hours worked after 22:00
+    """
+    if not in_time_str or not out_time_str:
+        return 0.0
+    
+    try:
+        # Parse times
+        in_parts = in_time_str.split(':')
+        out_parts = out_time_str.split(':')
+        
+        in_hour = int(in_parts[0])
+        in_min = int(in_parts[1]) if len(in_parts) > 1 else 0
+        out_hour = int(out_parts[0])
+        out_min = int(out_parts[1]) if len(out_parts) > 1 else 0
+        
+        in_decimal = in_hour + in_min / 60.0
+        out_decimal = out_hour + out_min / 60.0
+        
+        # Handle day wrap (e.g., 10:00 to 22:00 wraps to next day)
+        if out_decimal < in_decimal:
+            out_decimal += 24
+        
+        # Night hours are hours worked after 22:00
+        night_start = night_start_hour
+        night_end = night_start + 24  # Next day 22:00
+        
+        # Calculate intersection of work hours with night period
+        work_start = in_decimal
+        work_end = out_decimal
+        
+        if work_end <= night_start:
+            # All work before night period
+            return 0.0
+        elif work_start >= night_end:
+            # All work after next night period (shouldn't happen in 24h)
+            return 0.0
+        else:
+            # Some work during night period
+            night_work_start = max(work_start, night_start)
+            night_work_end = min(work_end, night_end)
+            night_hours = night_work_end - night_work_start
+            return max(0.0, night_hours)
+    except:
+        return 0.0
 
 
 @app.get("/attendance/export/employee-monthly")
@@ -3219,9 +3356,10 @@ async def export_employee_monthly_attendance(
             else:
                 unpaid_leave_days += days
         
-        # Count worked hours
+        # Count worked hours and night hours
         total_worked_hours = 0
         total_ot_hours = 0
+        total_night_hours = 0
         working_days_worked = 0
         
         for record in attendance_records:
@@ -3230,6 +3368,10 @@ async def export_employee_monthly_attendance(
                 working_days_worked += 1
             if record.overtime_hours:
                 total_ot_hours += record.overtime_hours
+            
+            # Calculate night hours (after 22:00)
+            night_hours = calculate_night_hours(record.in_time, record.out_time, night_start_hour=22)
+            total_night_hours += night_hours
         
         # Summary sections
         row = 5
@@ -3335,6 +3477,7 @@ async def export_employee_monthly_attendance(
         hours_items = [
             ('Total Hours Worked', f'{total_worked_hours:.2f}'),
             ('Total Overtime Hours', f'{total_ot_hours:.2f}'),
+            ('Total Night Hours (After 22:00)', f'{total_night_hours:.2f}'),
         ]
         
         for label, value in hours_items:
@@ -3357,16 +3500,16 @@ async def export_employee_monthly_attendance(
         # Title
         ws['A1'] = f"{employee.first_name} {employee.last_name} - Daily Attendance"
         ws['A1'].font = title_font
-        ws.merge_cells('A1:L1')
+        ws.merge_cells('A1:M1')
         
         ws['A2'] = f"{calendar.month_name[month]} {year}"
         ws['A2'].font = Font(size=11)
-        ws.merge_cells('A2:L2')
+        ws.merge_cells('A2:M2')
         
         ws['A3'] = ""
         
         # Headers
-        headers = ['Date', 'Day', 'Assigned Shift', 'Check-In', 'Check-Out', 'Hours Worked', 'Break (min)', 'Overtime Hours', 'Status', 'Comp-Off Earned', 'Comp-Off Used', 'Notes']
+        headers = ['Date', 'Day', 'Assigned Shift', 'Check-In', 'Check-Out', 'Hours Worked', 'Night Hours (After 22:00)', 'Break (min)', 'Overtime Hours', 'Status', 'Comp-Off Earned', 'Comp-Off Used', 'Notes']
         for col, header in enumerate(headers, 1):
             cell = ws.cell(row=4, column=col)
             cell.value = header
@@ -3379,6 +3522,7 @@ async def export_employee_monthly_attendance(
         row = 5
         total_worked_hours = 0
         total_ot_hours = 0
+        total_night_hours = 0
         working_days_count = 0
         comp_off_earned_count = 0
         comp_off_used_count = 0
@@ -3391,6 +3535,9 @@ async def export_employee_monthly_attendance(
             
             day_name = record.date.strftime('%A')
             
+            # Calculate night hours
+            night_hours = calculate_night_hours(record.in_time, record.out_time, night_start_hour=22)
+            
             # Check if comp-off earned or used on this date
             comp_off_earned_str = '✓ Yes' if record.date in comp_off_earned_dates else '-'
             comp_off_used_str = '✓ Yes' if record.date in comp_off_used_dates else '-'
@@ -3401,18 +3548,19 @@ async def export_employee_monthly_attendance(
             ws.cell(row=row, column=4).value = record.in_time or '-'
             ws.cell(row=row, column=5).value = record.out_time or '-'
             ws.cell(row=row, column=6).value = f"{record.worked_hours:.2f}" if record.worked_hours else '-'
-            ws.cell(row=row, column=7).value = f"{record.break_minutes}" if record.break_minutes else '-'
-            ws.cell(row=row, column=8).value = f"{record.overtime_hours:.2f}" if record.overtime_hours else '-'
-            ws.cell(row=row, column=9).value = record.status or '-'
-            ws.cell(row=row, column=10).value = comp_off_earned_str
-            ws.cell(row=row, column=11).value = comp_off_used_str
-            ws.cell(row=row, column=12).value = record.notes or '-'
+            ws.cell(row=row, column=7).value = f"{night_hours:.2f}" if night_hours > 0 else '-'
+            ws.cell(row=row, column=8).value = f"{record.break_minutes}" if record.break_minutes else '-'
+            ws.cell(row=row, column=9).value = f"{record.overtime_hours:.2f}" if record.overtime_hours else '-'
+            ws.cell(row=row, column=10).value = record.status or '-'
+            ws.cell(row=row, column=11).value = comp_off_earned_str
+            ws.cell(row=row, column=12).value = comp_off_used_str
+            ws.cell(row=row, column=13).value = record.notes or '-'
             
             # Apply styling
-            for col in range(1, 13):
+            for col in range(1, 14):
                 cell = ws.cell(row=row, column=col)
                 cell.border = border
-                cell.alignment = center_alignment if col in [1, 2, 9, 10, 11] else Alignment(horizontal='left', vertical='center')
+                cell.alignment = center_alignment if col in [1, 2, 10, 11, 12] else Alignment(horizontal='left', vertical='center')
                 # Alternate row colors
                 if row % 2 == 0:
                     cell.fill = PatternFill(start_color="F2F2F2", end_color="F2F2F2", fill_type="solid")
@@ -3423,6 +3571,9 @@ async def export_employee_monthly_attendance(
             
             if record.overtime_hours:
                 total_ot_hours += record.overtime_hours
+            
+            # Add night hours to total
+            total_night_hours += night_hours
             
             if record.date in comp_off_earned_dates:
                 comp_off_earned_count += 1
@@ -3438,12 +3589,13 @@ async def export_employee_monthly_attendance(
         ws.column_dimensions['D'].width = 12
         ws.column_dimensions['E'].width = 12
         ws.column_dimensions['F'].width = 14
-        ws.column_dimensions['G'].width = 12
-        ws.column_dimensions['H'].width = 16
-        ws.column_dimensions['I'].width = 12
-        ws.column_dimensions['J'].width = 15
+        ws.column_dimensions['G'].width = 20  # Night Hours column
+        ws.column_dimensions['H'].width = 12
+        ws.column_dimensions['I'].width = 16
+        ws.column_dimensions['J'].width = 12
         ws.column_dimensions['K'].width = 15
-        ws.column_dimensions['L'].width = 20
+        ws.column_dimensions['L'].width = 15
+        ws.column_dimensions['M'].width = 20
         
         # Set Summary as the active sheet
         wb.active = summary_sheet
@@ -5420,8 +5572,49 @@ async def get_schedules(
     if end_date:
         query = query.filter(Schedule.date <= end_date)
 
-    result = await db.execute(query.order_by(Schedule.date))
-    return result.scalars().all()
+    result = await db.execute(query.order_by(Schedule.date, Schedule.status))
+    all_schedules = result.scalars().all()
+    
+    # For both employees and managers: filter out leave schedules if a shift schedule exists
+    # Group schedules by (employee_id, date)
+    schedules_by_emp_date = {}
+    for sched in all_schedules:
+        key = (sched.employee_id, sched.date)
+        if key not in schedules_by_emp_date:
+            schedules_by_emp_date[key] = []
+        schedules_by_emp_date[key].append(sched)
+    
+    # For each employee-date combo, keep only the 'scheduled' status if it exists
+    filtered_schedules = []
+    for emp_date_key, scheds in schedules_by_emp_date.items():
+        # Check if there's a 'scheduled' status schedule
+        scheduled_scheds = [s for s in scheds if s.status == 'scheduled']
+        if scheduled_scheds:
+            # Use scheduled status schedules
+            filtered_schedules.extend(scheduled_scheds)
+        else:
+            # Otherwise use whatever is there (leave, comp_off, etc.)
+            for sched in scheds:
+                # For employees viewing leave/comp-off: show empty times (-)
+                # For managers viewing leave/comp-off: show shift times if available
+                if current_user.user_type == UserType.EMPLOYEE and sched.status in ['leave', 'comp_off_taken', 'comp_off_earned']:
+                    # Clear the times for employees on leave
+                    sched.start_time = None
+                    sched.end_time = None
+                elif sched.status in ['leave', 'leave_half_morning', 'leave_half_afternoon', 'comp_off_earned'] and \
+                   sched.start_time == "00:00" and sched.end_time == "23:59" and sched.shift_id:
+                    # For managers, if it's a leave/comp_off with full-day times, try to get actual shift times
+                    shift_result = await db.execute(
+                        select(Shift).filter(Shift.id == sched.shift_id)
+                    )
+                    shift = shift_result.scalar_one_or_none()
+                    if shift and shift.start_time and shift.end_time:
+                        sched.start_time = shift.start_time
+                        sched.end_time = shift.end_time
+                
+                filtered_schedules.append(sched)
+    
+    return filtered_schedules
 
 
 @app.post("/schedules", response_model=ScheduleResponse)
@@ -6064,18 +6257,21 @@ async def generate_schedules(
                                 leave_notes = f"Comp-Off Taken: {leave_request.reason or 'Using earned comp-off'}"
                             elif leave_request.duration_type == 'half_day_morning':
                                 leave_status = 'leave_half_morning'
-                                start_time = "00:00"
+                                # Use shift's start time to 12:00 for morning leave
+                                start_time = shift.start_time
                                 end_time = "12:00"
                                 leave_notes = f"Half Day Leave (Morning) - {leave_request.leave_type}"
                             elif leave_request.duration_type == 'half_day_afternoon':
                                 leave_status = 'leave_half_afternoon'
+                                # Use 12:00 to shift's end time for afternoon leave
                                 start_time = "12:00"
-                                end_time = "23:59"
+                                end_time = shift.end_time
                                 leave_notes = f"Half Day Leave (Afternoon) - {leave_request.leave_type}"
                             else:
+                                # Full day leave - use the actual shift times
                                 leave_status = 'leave'
-                                start_time = "00:00"
-                                end_time = "23:59"
+                                start_time = shift.start_time
+                                end_time = shift.end_time
                                 leave_notes = f"Full Day Leave - {leave_request.leave_type}"
 
                             leave_type_desc = 'comp-off' if comp_off_request else leave_request.leave_type

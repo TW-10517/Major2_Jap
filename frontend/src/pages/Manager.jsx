@@ -2562,6 +2562,9 @@ const ManagerAttendance = ({ user }) => {
   const [empDownloadMonth, setEmpDownloadMonth] = useState(new Date().getMonth() + 1);
   const [empDownloadYear, setEmpDownloadYear] = useState(new Date().getFullYear());
   const [empDownloading, setEmpDownloading] = useState(false);
+  const [showMonthlyModal, setShowMonthlyModal] = useState(false);
+  const [showWeeklyModal, setShowWeeklyModal] = useState(false);
+  const [selectedEmploymentType, setSelectedEmploymentType] = useState('');
 
   useEffect(() => {
     loadAttendance();
@@ -2592,15 +2595,25 @@ const ManagerAttendance = ({ user }) => {
     }
   };
 
-  const downloadMonthlyReport = async () => {
+  const downloadMonthlyReport = async (employmentType = '') => {
     try {
-      const response = await api.get(`/attendance/export/monthly?department_id=${user.manager_department_id}&year=${selectedYear}&month=${selectedMonth}`, {
+      const params = new URLSearchParams({
+        department_id: user.manager_department_id,
+        year: selectedYear,
+        month: selectedMonth
+      });
+      if (employmentType) {
+        params.append('employment_type', employmentType);
+      }
+      
+      const response = await api.get(`/attendance/export/monthly?${params.toString()}`, {
         responseType: 'blob'
       });
       const url = window.URL.createObjectURL(new Blob([response.data]));
       const link = document.createElement('a');
       link.href = url;
-      link.setAttribute('download', `attendance_${selectedYear}-${String(selectedMonth).padStart(2, '0')}.xlsx`);
+      const typeLabel = employmentType ? `_${employmentType}` : '';
+      link.setAttribute('download', `attendance_${selectedYear}-${String(selectedMonth).padStart(2, '0')}${typeLabel}.xlsx`);
       document.body.appendChild(link);
       link.click();
       link.remove();
@@ -2609,7 +2622,7 @@ const ManagerAttendance = ({ user }) => {
     }
   };
 
-  const downloadWeeklyReport = async () => {
+  const downloadWeeklyReport = async (employmentType = '') => {
     try {
       const today = new Date();
       const dayOfWeek = today.getDay();
@@ -2618,13 +2631,23 @@ const ManagerAttendance = ({ user }) => {
       const endDate = new Date(startDate);
       endDate.setDate(startDate.getDate() + 6);
       
-      const response = await api.get(`/attendance/export/weekly?department_id=${user.manager_department_id}&start_date=${startDate.toISOString().split('T')[0]}&end_date=${endDate.toISOString().split('T')[0]}`, {
+      const params = new URLSearchParams({
+        department_id: user.manager_department_id,
+        start_date: startDate.toISOString().split('T')[0],
+        end_date: endDate.toISOString().split('T')[0]
+      });
+      if (employmentType) {
+        params.append('employment_type', employmentType);
+      }
+      
+      const response = await api.get(`/attendance/export/weekly?${params.toString()}`, {
         responseType: 'blob'
       });
       const url = window.URL.createObjectURL(new Blob([response.data]));
       const link = document.createElement('a');
       link.href = url;
-      link.setAttribute('download', `attendance_weekly_${startDate.toISOString().split('T')[0]}.xlsx`);
+      const typeLabel = employmentType ? `_${employmentType}` : '';
+      link.setAttribute('download', `attendance_weekly_${startDate.toISOString().split('T')[0]}${typeLabel}.xlsx`);
       document.body.appendChild(link);
       link.click();
       link.remove();
@@ -2746,21 +2769,27 @@ const ManagerAttendance = ({ user }) => {
                 </select>
               </div>
 
-              <div className="flex items-end">
+              <div className="flex items-end gap-2">
                 <button
-                  onClick={downloadMonthlyReport}
-                  className="w-full px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded-lg font-medium transition"
+                  onClick={() => {
+                    setSelectedEmploymentType('');
+                    setShowMonthlyModal(true);
+                  }}
+                  className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition font-medium text-sm"
                 >
-                  📥 Download Monthly
+                  Download Monthly
                 </button>
               </div>
 
-              <div className="flex items-end">
+              <div className="flex items-end gap-2">
                 <button
-                  onClick={downloadWeeklyReport}
-                  className="w-full px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg font-medium transition"
+                  onClick={() => {
+                    setSelectedEmploymentType('');
+                    setShowWeeklyModal(true);
+                  }}
+                  className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition font-medium text-sm"
                 >
-                  📥 Download Weekly
+                  Download Weekly
                 </button>
               </div>
             </div>
@@ -2768,7 +2797,8 @@ const ManagerAttendance = ({ user }) => {
 
           {/* Employee Monthly Report Download Section */}
           <div className="bg-blue-50 p-4 rounded-lg mb-6 border border-blue-200">
-            <h3 className="text-sm font-semibold text-gray-800 mb-3">📄 Download Individual Employee Monthly Report</h3>
+            <h3 className="text-sm font-semibold text-gray-800 mb-2">📄 Download Individual Employee Monthly Report</h3>
+            <p className="text-xs text-gray-600 mb-3">Includes: Daily attendance details with night hours (after 22:00), overtime, leave info, and summary statistics</p>
             <div className="grid grid-cols-1 md:grid-cols-5 gap-3">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Employee ID</label>
@@ -2903,6 +2933,84 @@ const ManagerAttendance = ({ user }) => {
             </div>
           )}
         </Card>
+
+        {/* Monthly Export Modal */}
+        <Modal 
+          isOpen={showMonthlyModal} 
+          onClose={() => setShowMonthlyModal(false)}
+          title="Download Monthly Report"
+        >
+          <div className="space-y-4">
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">Select Employee Type</label>
+              <select
+                value={selectedEmploymentType}
+                onChange={(e) => setSelectedEmploymentType(e.target.value)}
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              >
+                <option value="">All Employees</option>
+                <option value="full_time">Full-Time Only</option>
+                <option value="part_time">Part-Time Only</option>
+              </select>
+            </div>
+            <div className="flex gap-2 justify-end">
+              <button
+                onClick={() => setShowMonthlyModal(false)}
+                className="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={() => {
+                  downloadMonthlyReport(selectedEmploymentType);
+                  setShowMonthlyModal(false);
+                }}
+                className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+              >
+                Download
+              </button>
+            </div>
+          </div>
+        </Modal>
+
+        {/* Weekly Export Modal */}
+        <Modal 
+          isOpen={showWeeklyModal} 
+          onClose={() => setShowWeeklyModal(false)}
+          title="Download Weekly Report"
+        >
+          <div className="space-y-4">
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">Select Employee Type</label>
+              <select
+                value={selectedEmploymentType}
+                onChange={(e) => setSelectedEmploymentType(e.target.value)}
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              >
+                <option value="">All Employees</option>
+                <option value="full_time">Full-Time Only</option>
+                <option value="part_time">Part-Time Only</option>
+              </select>
+            </div>
+            <div className="flex gap-2 justify-end">
+              <button
+                onClick={() => setShowWeeklyModal(false)}
+                className="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={() => {
+                  downloadWeeklyReport(selectedEmploymentType);
+                  setShowWeeklyModal(false);
+                }}
+                className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition"
+              >
+                Download
+              </button>
+            </div>
+          </div>
+        </Modal>
       </div>
     </div>
   );

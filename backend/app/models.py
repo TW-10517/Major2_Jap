@@ -231,6 +231,7 @@ class Attendance(Base):
     status = Column(String(20))  # onTime, slightlyLate, late, veryLate, missed
     out_status = Column(String(20))
     worked_hours = Column(Float, default=0)
+    night_hours = Column(Float, default=0)  # Hours worked after 22:00
     overtime_hours = Column(Float, default=0)
     break_minutes = Column(Integer, default=0)
     notes = Column(Text)

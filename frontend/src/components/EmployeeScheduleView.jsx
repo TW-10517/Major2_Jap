@@ -67,7 +67,7 @@ const EmployeeScheduleView = ({ employeeId }) => {
 
   const getUpcomingSchedules = () => {
     const today = new Date();
-    return schedules.filter(s => new Date(s.date) >= today).slice(1, 8);
+    return schedules.filter(s => new Date(s.date + 'T00:00:00') >= today).slice(1, 8);
   };
 
   const getStatusColor = (schedule) => {
@@ -286,7 +286,7 @@ const EmployeeScheduleView = ({ employeeId }) => {
                   <div className="flex items-center justify-between">
                     <div>
                       <p className="font-semibold text-lg text-gray-800">
-                        {new Date(schedule.date).toLocaleDateString('en-US', {
+                        {new Date(schedule.date + 'T00:00:00').toLocaleDateString('en-US', {
                           weekday: 'long',
                           month: 'short',
                           day: 'numeric'
@@ -343,7 +343,7 @@ const EmployeeScheduleView = ({ employeeId }) => {
                 {schedules.map(schedule => (
                   <tr key={schedule.id} className="border-b hover:bg-gray-50">
                     <td className="px-4 py-2 text-gray-800">
-                      {new Date(schedule.date).toLocaleDateString()}
+                      {new Date(schedule.date + 'T00:00:00').toLocaleDateString()}
                     </td>
                     <td className="px-4 py-2 text-gray-800">
                       {schedule.status === 'leave_half_morning'
