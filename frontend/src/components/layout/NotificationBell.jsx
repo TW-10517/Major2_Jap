@@ -17,7 +17,7 @@ const NotificationBell = () => {
 
   useEffect(() => {
     loadNotifications();
-    const interval = setInterval(loadNotifications, 30000); // Refresh every 30 seconds
+    const interval = setInterval(loadNotifications, 5000); // Refresh every 5 seconds for faster updates
     return () => clearInterval(interval);
   }, []);
 
@@ -78,6 +78,24 @@ const NotificationBell = () => {
         return '✅';
       case 'leave_rejected':
         return '❌';
+      case 'leave_request':
+        return '📝';
+      case 'comp_off_approved':
+        return '✅';
+      case 'comp_off_rejected':
+        return '❌';
+      case 'comp_off_request':
+        return '📝';
+      case 'overtime_approved':
+        return '✅';
+      case 'overtime_rejected':
+        return '❌';
+      case 'overtime_request':
+        return '📝';
+      case 'comp_off_earned':
+        return '💰';
+      case 'comp_off_used':
+        return '📅';
       case 'schedule_update':
         return '📅';
       case 'message':

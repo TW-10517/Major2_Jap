@@ -3680,6 +3680,27 @@ async def create_leave_request(
     # Refresh with eager loading of employee relationship
     await db.refresh(leave_request, attribute_names=['employee'])
     
+    # Send notification to manager
+    if employee and employee.department_id:
+        # Get manager for this employee's department
+        manager_result = await db.execute(
+            select(Manager).filter(Manager.department_id == employee.department_id)
+        )
+        manager = manager_result.scalar_one_or_none()
+        
+        if manager and manager.user_id:
+            notification_title = f"📝 Leave Request from {employee.first_name} {employee.last_name}"
+            notification_message = f"{employee.first_name} {employee.last_name} has requested {leave_data.leave_type} leave from {leave_data.start_date} to {leave_data.end_date}."
+            await create_notification(
+                user_id=manager.user_id,
+                title=notification_title,
+                message=notification_message,
+                notification_type="leave_request",
+                related_id=leave_request.id,
+                db=db
+            )
+            await db.commit()
+    
     return leave_request
 
 
@@ -4615,6 +4636,25 @@ async def approve_leave(
                 db.add(detail)
                 current_date += timedelta(days=1)
 
+    # Get employee user for notification
+    emp_user_result = await db.execute(
+        select(User).filter(User.id == employee.user_id)
+    )
+    emp_user = emp_user_result.scalar_one_or_none()
+    
+    # Create notification for employee
+    if emp_user:
+        notification_title = f"✅ Leave Request Approved"
+        notification_message = f"Your {leave_request.leave_type.title()} leave request from {leave_request.start_date} to {leave_request.end_date} has been approved."
+        await create_notification(
+            user_id=emp_user.id,
+            title=notification_title,
+            message=notification_message,
+            notification_type="leave_approved",
+            related_id=leave_request.id,
+            db=db
+        )
+
     await db.commit()
 
     return {"message": "Leave approved successfully"}
@@ -4644,6 +4684,34 @@ async def reject_leave(
     leave_request.manager_id = manager.id
     leave_request.reviewed_at = datetime.utcnow()
     leave_request.review_notes = approval_data.review_notes
+
+    # Get employee for notification
+    emp_result = await db.execute(
+        select(Employee).filter(Employee.id == leave_request.employee_id)
+    )
+    employee = emp_result.scalar_one_or_none()
+
+    # Get employee user for notification
+    if employee:
+        emp_user_result = await db.execute(
+            select(User).filter(User.id == employee.user_id)
+        )
+        emp_user = emp_user_result.scalar_one_or_none()
+        
+        # Create notification for employee
+        if emp_user:
+            notification_title = f"❌ Leave Request Rejected"
+            notification_message = f"Your {leave_request.leave_type.title()} leave request from {leave_request.start_date} to {leave_request.end_date} has been rejected."
+            if approval_data.review_notes:
+                notification_message += f" Reason: {approval_data.review_notes}"
+            await create_notification(
+                user_id=emp_user.id,
+                title=notification_title,
+                message=notification_message,
+                notification_type="leave_rejected",
+                related_id=leave_request.id,
+                db=db
+            )
 
     await db.commit()
 
@@ -4734,6 +4802,27 @@ async def create_comp_off_request(
     
     # Reload with eager loading of employee relationship
     await db.refresh(comp_off_request, attribute_names=['employee'])
+    
+    # Send notification to manager if employee created the request
+    if current_user.user_type == UserType.EMPLOYEE and employee and employee.department_id:
+        # Get manager for this employee's department
+        manager_result = await db.execute(
+            select(Manager).filter(Manager.department_id == employee.department_id)
+        )
+        manager = manager_result.scalar_one_or_none()
+        
+        if manager and manager.user_id:
+            notification_title = f"📝 Comp-Off Request from {employee.first_name} {employee.last_name}"
+            notification_message = f"{employee.first_name} {employee.last_name} has requested comp-off for {comp_off_data.comp_off_date}."
+            await create_notification(
+                user_id=manager.user_id,
+                title=notification_title,
+                message=notification_message,
+                notification_type="comp_off_request",
+                related_id=comp_off_request.id,
+                db=db
+            )
+            await db.commit()
 
     return comp_off_request
 
@@ -5230,6 +5319,25 @@ async def approve_comp_off(
     )
     db.add(detail)
     
+    # Get employee user for notification
+    emp_user_result = await db.execute(
+        select(User).filter(User.id == employee.user_id)
+    )
+    emp_user = emp_user_result.scalar_one_or_none()
+    
+    # Create notification for employee
+    if emp_user:
+        notification_title = f"✅ Comp-Off Usage Approved"
+        notification_message = f"Your comp-off usage request for {comp_off.comp_off_date} has been approved."
+        await create_notification(
+            user_id=emp_user.id,
+            title=notification_title,
+            message=notification_message,
+            notification_type="comp_off_approved",
+            related_id=comp_off.id,
+            db=db
+        )
+    
     # Commit all changes
     await db.commit()
     
@@ -5265,6 +5373,34 @@ async def reject_comp_off(
     comp_off.manager_id = manager.id
     comp_off.reviewed_at = datetime.utcnow()
     comp_off.review_notes = approval_data.review_notes
+    
+    # Get employee for notification
+    emp_result = await db.execute(
+        select(Employee).filter(Employee.id == comp_off.employee_id)
+    )
+    employee = emp_result.scalar_one_or_none()
+    
+    # Get employee user for notification
+    if employee:
+        emp_user_result = await db.execute(
+            select(User).filter(User.id == employee.user_id)
+        )
+        emp_user = emp_user_result.scalar_one_or_none()
+        
+        # Create notification for employee
+        if emp_user:
+            notification_title = f"❌ Comp-Off Usage Rejected"
+            notification_message = f"Your comp-off usage request for {comp_off.comp_off_date} has been rejected."
+            if approval_data.review_notes:
+                notification_message += f" Reason: {approval_data.review_notes}"
+            await create_notification(
+                user_id=emp_user.id,
+                title=notification_title,
+                message=notification_message,
+                notification_type="comp_off_rejected",
+                related_id=comp_off.id,
+                db=db
+            )
     
     await db.commit()
     
@@ -5539,6 +5675,33 @@ async def mark_message_as_read(
     await db.commit()
     
     return {"message": "Message marked as read"}
+
+
+# Helper function to create notifications
+async def create_notification(
+    user_id: int,
+    title: str,
+    message: str,
+    notification_type: str,
+    related_id: int = None,
+    db: AsyncSession = None
+):
+    """Create a notification for a user"""
+    try:
+        notification = Notification(
+            user_id=user_id,
+            title=title,
+            message=message,
+            notification_type=notification_type,
+            related_id=related_id,
+            is_read=False
+        )
+        db.add(notification)
+        await db.flush()
+        return notification
+    except Exception as e:
+        print(f"Error creating notification: {e}")
+        return None
 
 
 # Notifications
@@ -7389,6 +7552,27 @@ async def create_overtime_request(
     await db.commit()
     await db.refresh(ot_request)
     
+    # Send notification to manager
+    if employee and employee.department_id:
+        # Get manager for this employee's department
+        manager_result = await db.execute(
+            select(Manager).filter(Manager.department_id == employee.department_id)
+        )
+        manager = manager_result.scalar_one_or_none()
+        
+        if manager and manager.user_id:
+            notification_title = f"📝 Overtime Request from {employee.first_name} {employee.last_name}"
+            notification_message = f"{employee.first_name} {employee.last_name} has requested overtime for {request_data.request_date} ({request_data.request_hours} hours)."
+            await create_notification(
+                user_id=manager.user_id,
+                title=notification_title,
+                message=notification_message,
+                notification_type="overtime_request",
+                related_id=ot_request.id,
+                db=db
+            )
+            await db.commit()
+    
     return ot_request
 
 
@@ -7463,6 +7647,25 @@ async def approve_overtime_request(
     ot_request.approved_at = datetime.utcnow()
     ot_request.approval_notes = approval_data.get("approval_notes", "")
     
+    # Get employee user for notification
+    emp_user_result = await db.execute(
+        select(User).filter(User.id == employee.user_id)
+    )
+    emp_user = emp_user_result.scalar_one_or_none()
+    
+    # Create notification for employee
+    if emp_user:
+        notification_title = f"✅ Overtime Request Approved"
+        notification_message = f"Your overtime request for {ot_request.overtime_date} ({ot_request.hours_requested} hours) has been approved."
+        await create_notification(
+            user_id=emp_user.id,
+            title=notification_title,
+            message=notification_message,
+            notification_type="overtime_approved",
+            related_id=ot_request.id,
+            db=db
+        )
+    
     await db.commit()
     await db.refresh(ot_request)
     
@@ -7498,6 +7701,27 @@ async def reject_overtime_request(
     ot_request.status = OvertimeStatus.REJECTED
     ot_request.approved_at = datetime.utcnow()
     ot_request.approval_notes = rejection_data.get("approval_notes", "")
+    
+    # Get employee user for notification
+    emp_user_result = await db.execute(
+        select(User).filter(User.id == employee.user_id)
+    )
+    emp_user = emp_user_result.scalar_one_or_none()
+    
+    # Create notification for employee
+    if emp_user:
+        notification_title = f"❌ Overtime Request Rejected"
+        notification_message = f"Your overtime request for {ot_request.overtime_date} ({ot_request.hours_requested} hours) has been rejected."
+        if rejection_data.get("approval_notes"):
+            notification_message += f" Reason: {rejection_data.get('approval_notes')}"
+        await create_notification(
+            user_id=emp_user.id,
+            title=notification_title,
+            message=notification_message,
+            notification_type="overtime_rejected",
+            related_id=ot_request.id,
+            db=db
+        )
     
     await db.commit()
     await db.refresh(ot_request)

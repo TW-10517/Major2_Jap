@@ -813,3 +813,2147 @@ INFO:     Finished server process [130573]
 INFO:     Started server process [133986]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
+
+============================================================
+Running database migrations on startup...
+============================================================
+✓ Column employee_id already exists
+✓ manager_id column already exists
+✓ comp_off_tracking already has earned_date column
+============================================================
+All migrations completed!
+============================================================
+
+INFO:     127.0.0.1:56631 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63241 - "GET /leave-statistics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63318 - "GET /schedules?start_date=2025-12-25&end_date=2025-12-25 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58999 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58999 - "GET /schedules?start_date=2025-12-25&end_date=2025-12-25 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58999 - "GET /leave-statistics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58999 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55710 - "GET /leave-statistics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59871 - "GET /schedules?start_date=2025-12-25&end_date=2025-12-25 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62923 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64077 - "GET /leave-statistics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58451 - "GET /schedules?start_date=2025-12-25&end_date=2025-12-25 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51742 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51742 - "GET /schedules?start_date=2025-12-25&end_date=2025-12-25 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51742 - "GET /leave-statistics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51742 - "OPTIONS /schedules?start_date=2025-12-01&end_date=2025-12-31 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52026 - "OPTIONS /schedules?start_date=2025-12-01&end_date=2025-12-31 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51742 - "GET /schedules?start_date=2025-12-01&end_date=2025-12-31 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51742 - "GET /schedules?start_date=2025-12-01&end_date=2025-12-31 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62181 - "POST /token HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62181 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62181 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62181 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62181 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62181 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62181 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56633 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62181 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54029 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60817 - "GET /calendar/holidays?year=2025&month=12 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56633 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60817 - "GET /calendar/holidays?year=2025&month=12 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54029 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62181 - "GET /schedules?start_date=2025-12-22&end_date=2025-12-28 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62181 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54029 - "GET /schedules?start_date=2025-12-22&end_date=2025-12-28 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54029 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54029 - "GET /schedules?start_date=2025-12-25&end_date=2025-12-25 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62181 - "GET /leave-statistics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62181 - "OPTIONS /schedules?start_date=2025-12-29&end_date=2026-01-04 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54029 - "GET /calendar/holidays?year=2025&month=12 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54029 - "OPTIONS /calendar/holidays?year=2026&month=1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54029 - "GET /calendar/holidays?year=2026&month=1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62181 - "GET /schedules?start_date=2025-12-29&end_date=2026-01-04 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62181 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62181 - "OPTIONS /schedules?start_date=2026-01-05&end_date=2026-01-11 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54029 - "GET /calendar/holidays?year=2026&month=1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62181 - "GET /schedules?start_date=2026-01-05&end_date=2026-01-11 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62181 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62181 - "OPTIONS /schedules?start_date=2026-01-12&end_date=2026-01-18 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54029 - "GET /calendar/holidays?year=2026&month=1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62181 - "GET /schedules?start_date=2026-01-12&end_date=2026-01-18 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62181 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54029 - "GET /calendar/holidays?year=2026&month=1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62181 - "GET /schedules?start_date=2026-01-05&end_date=2026-01-11 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62181 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65148 - "OPTIONS /schedules/generate?start_date=2026-01-05&end_date=2026-01-11&regenerate=false HTTP/1.1" 200 OK
+[DEBUG] Schedule generation started for dates 2026-01-05 to 2026-01-11
+[DEBUG] Department ID: 11
+INFO:     127.0.0.1:49195 - "POST /schedules/generate?start_date=2026-01-05&end_date=2026-01-11&regenerate=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49195 - "OPTIONS /schedules/generate?start_date=2026-01-05&end_date=2026-01-11&regenerate=true HTTP/1.1" 200 OK
+[DEBUG] Schedule generation started for dates 2026-01-05 to 2026-01-11
+[DEBUG] Department ID: 11
+[DEBUG] Found 1 schedules with check-in records - will skip deletion
+[DEBUG] Regenerating - deleting 31 existing schedules (excluding ones with check-ins)
+[DEBUG] Deleting 27 work shift schedules (excluding 1 with check-ins)
+[DEBUG] Found 4 roles
+[DEBUG] Found 3 shifts
+[DEBUG] Processing 3 shifts for schedule_config validation
+[DEBUG] Final Shift: 17 - Morning Shift, enabled_days=['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
+[DEBUG] Final Shift: 18 - Afternoon Shift, enabled_days=['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
+[DEBUG] Final Shift: 19 - Evening Shift, enabled_days=['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
+[DEBUG] Found 12 employees
+[DEBUG] Employee: 66 - Employee 4, active=True, weekly_hours=40.0, daily_max=8.0, shifts_per_week=5
+[DEBUG] Employee: 67 - Employee 5, active=True, weekly_hours=40.0, daily_max=8.0, shifts_per_week=5
+[DEBUG] Employee: 68 - Employee 6, active=True, weekly_hours=40.0, daily_max=8.0, shifts_per_week=5
+[DEBUG] Employee: 69 - Employee 7, active=True, weekly_hours=40.0, daily_max=8.0, shifts_per_week=5
+[DEBUG] Employee: 70 - Employee 8, active=True, weekly_hours=40.0, daily_max=8.0, shifts_per_week=5
+[DEBUG] Employee: 71 - Employee 9, active=True, weekly_hours=40.0, daily_max=8.0, shifts_per_week=5
+[DEBUG] Employee: 72 - Employee 10, active=True, weekly_hours=40.0, daily_max=8.0, shifts_per_week=5
+[DEBUG] Employee: 64 - Employee 2, active=True, weekly_hours=40.0, daily_max=8.0, shifts_per_week=5
+[DEBUG] Employee: 65 - Employee 3, active=True, weekly_hours=40.0, daily_max=8.0, shifts_per_week=5
+[DEBUG] Employee: 63 - Employee 1, active=True, weekly_hours=40.0, daily_max=8.0, shifts_per_week=5
+[DEBUG] Employee: 113 - narchonai, active=True, weekly_hours=40.0, daily_max=8.0, shifts_per_week=5
+[DEBUG] Employee: 114 - swetha, active=True, weekly_hours=40.0, daily_max=8.0, shifts_per_week=5
+[DEBUG] Building eligibility matrix for 3 shifts and 12 employees
+[DEBUG] Shift 17 (Morning Shift): 66 (Employee 4) is ELIGIBLE
+[DEBUG] Shift 17 (Morning Shift): 67 (Employee 5) is NOT eligible (role mismatch: emp.role=22 vs shift.role=21)
+[DEBUG] Shift 17 (Morning Shift): 68 (Employee 6) is NOT eligible (role mismatch: emp.role=23 vs shift.role=21)
+[DEBUG] Shift 17 (Morning Shift): 69 (Employee 7) is NOT eligible (role mismatch: emp.role=24 vs shift.role=21)
+[DEBUG] Shift 17 (Morning Shift): 70 (Employee 8) is ELIGIBLE
+[DEBUG] Shift 17 (Morning Shift): 71 (Employee 9) is NOT eligible (role mismatch: emp.role=22 vs shift.role=21)
+[DEBUG] Shift 17 (Morning Shift): 72 (Employee 10) is NOT eligible (role mismatch: emp.role=23 vs shift.role=21)
+[DEBUG] Shift 17 (Morning Shift): 64 (Employee 2) is ELIGIBLE
+[DEBUG] Shift 17 (Morning Shift): 65 (Employee 3) is ELIGIBLE
+[DEBUG] Shift 17 (Morning Shift): 63 (Employee 1) is ELIGIBLE
+[DEBUG] Shift 17 (Morning Shift): 113 (narchonai) is ELIGIBLE
+[DEBUG] Shift 17 (Morning Shift): 114 (swetha) is ELIGIBLE
+[DEBUG] Shift 18 (Afternoon Shift): 66 (Employee 4) is ELIGIBLE
+[DEBUG] Shift 18 (Afternoon Shift): 67 (Employee 5) is NOT eligible (role mismatch: emp.role=22 vs shift.role=21)
+[DEBUG] Shift 18 (Afternoon Shift): 68 (Employee 6) is NOT eligible (role mismatch: emp.role=23 vs shift.role=21)
+[DEBUG] Shift 18 (Afternoon Shift): 69 (Employee 7) is NOT eligible (role mismatch: emp.role=24 vs shift.role=21)
+[DEBUG] Shift 18 (Afternoon Shift): 70 (Employee 8) is ELIGIBLE
+[DEBUG] Shift 18 (Afternoon Shift): 71 (Employee 9) is NOT eligible (role mismatch: emp.role=22 vs shift.role=21)
+[DEBUG] Shift 18 (Afternoon Shift): 72 (Employee 10) is NOT eligible (role mismatch: emp.role=23 vs shift.role=21)
+[DEBUG] Shift 18 (Afternoon Shift): 64 (Employee 2) is ELIGIBLE
+[DEBUG] Shift 18 (Afternoon Shift): 65 (Employee 3) is ELIGIBLE
+[DEBUG] Shift 18 (Afternoon Shift): 63 (Employee 1) is ELIGIBLE
+[DEBUG] Shift 18 (Afternoon Shift): 113 (narchonai) is ELIGIBLE
+[DEBUG] Shift 18 (Afternoon Shift): 114 (swetha) is ELIGIBLE
+[DEBUG] Shift 19 (Evening Shift): 66 (Employee 4) is ELIGIBLE
+[DEBUG] Shift 19 (Evening Shift): 67 (Employee 5) is NOT eligible (role mismatch: emp.role=22 vs shift.role=21)
+[DEBUG] Shift 19 (Evening Shift): 68 (Employee 6) is NOT eligible (role mismatch: emp.role=23 vs shift.role=21)
+[DEBUG] Shift 19 (Evening Shift): 69 (Employee 7) is NOT eligible (role mismatch: emp.role=24 vs shift.role=21)
+[DEBUG] Shift 19 (Evening Shift): 70 (Employee 8) is ELIGIBLE
+[DEBUG] Shift 19 (Evening Shift): 71 (Employee 9) is NOT eligible (role mismatch: emp.role=22 vs shift.role=21)
+[DEBUG] Shift 19 (Evening Shift): 72 (Employee 10) is NOT eligible (role mismatch: emp.role=23 vs shift.role=21)
+[DEBUG] Shift 19 (Evening Shift): 64 (Employee 2) is ELIGIBLE
+[DEBUG] Shift 19 (Evening Shift): 65 (Employee 3) is ELIGIBLE
+[DEBUG] Shift 19 (Evening Shift): 63 (Employee 1) is ELIGIBLE
+[DEBUG] Shift 19 (Evening Shift): 113 (narchonai) is ELIGIBLE
+[DEBUG] Shift 19 (Evening Shift): 114 (swetha) is ELIGIBLE
+[DEBUG] ✓ Shift 17 (Morning Shift) - Day Monday is ENABLED, processing
+[DEBUG] Checking Employee 4 (66) for shift 17 (Morning Shift) on 2026-01-05
+[DEBUG] Employee 4: weekly 0.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 4 on 2026-01-05
+[DEBUG] Checking Employee 8 (70) for shift 17 (Morning Shift) on 2026-01-05
+[DEBUG] Employee 8: weekly 0.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 8 on 2026-01-05
+[DEBUG] Checking Employee 2 (64) for shift 17 (Morning Shift) on 2026-01-05
+[DEBUG] Employee 2: weekly 0.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 2 on 2026-01-05
+[DEBUG] Checking Employee 3 (65) for shift 17 (Morning Shift) on 2026-01-05
+[DEBUG] Employee 3: weekly 0.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 3 on 2026-01-05
+[DEBUG] Checking Employee 1 (63) for shift 17 (Morning Shift) on 2026-01-05
+[DEBUG] Employee 1: weekly 0.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 1 on 2026-01-05
+[DEBUG] ✓ Shift 18 (Afternoon Shift) - Day Monday is ENABLED, processing
+[DEBUG] ✗ Employee 4 already has a shift on 2026-01-05, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 8 already has a shift on 2026-01-05, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 2 already has a shift on 2026-01-05, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 3 already has a shift on 2026-01-05, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 1 already has a shift on 2026-01-05, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ narchonai already has a schedule entry on 2026-01-05, skipping leave creation
+[DEBUG] Checking swetha (114) for shift 18 (Afternoon Shift) on 2026-01-05
+[DEBUG] swetha: weekly 0.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for swetha on 2026-01-05
+[DEBUG] ✓ Shift 19 (Evening Shift) - Day Monday is ENABLED, processing
+[DEBUG] ✗ Employee 4 already has a shift on 2026-01-05, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 8 already has a shift on 2026-01-05, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 2 already has a shift on 2026-01-05, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 3 already has a shift on 2026-01-05, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 1 already has a shift on 2026-01-05, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ narchonai already has a schedule entry on 2026-01-05, skipping leave creation
+[DEBUG] ✗ swetha already has a shift on 2026-01-05, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✓ Shift 17 (Morning Shift) - Day Tuesday is ENABLED, processing
+[DEBUG] Checking Employee 4 (66) for shift 17 (Morning Shift) on 2026-01-06
+[DEBUG] Employee 4: weekly 8.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 4 on 2026-01-06
+[DEBUG] Checking Employee 8 (70) for shift 17 (Morning Shift) on 2026-01-06
+[DEBUG] Employee 8: weekly 8.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 8 on 2026-01-06
+[DEBUG] Checking Employee 2 (64) for shift 17 (Morning Shift) on 2026-01-06
+[DEBUG] Employee 2: weekly 8.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 2 on 2026-01-06
+[DEBUG] Checking Employee 3 (65) for shift 17 (Morning Shift) on 2026-01-06
+[DEBUG] Employee 3: weekly 8.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 3 on 2026-01-06
+[DEBUG] Checking Employee 1 (63) for shift 17 (Morning Shift) on 2026-01-06
+[DEBUG] Employee 1: weekly 8.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 1 on 2026-01-06
+[DEBUG] ✓ Shift 18 (Afternoon Shift) - Day Tuesday is ENABLED, processing
+[DEBUG] ✗ Employee 4 already has a shift on 2026-01-06, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 8 already has a shift on 2026-01-06, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 2 already has a shift on 2026-01-06, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 3 already has a shift on 2026-01-06, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 1 already has a shift on 2026-01-06, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ narchonai already has a schedule entry on 2026-01-06, skipping leave creation
+[DEBUG] Checking swetha (114) for shift 18 (Afternoon Shift) on 2026-01-06
+[DEBUG] swetha: weekly 8.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for swetha on 2026-01-06
+[DEBUG] ✓ Shift 19 (Evening Shift) - Day Tuesday is ENABLED, processing
+[DEBUG] ✗ Employee 4 already has a shift on 2026-01-06, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 8 already has a shift on 2026-01-06, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 2 already has a shift on 2026-01-06, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 3 already has a shift on 2026-01-06, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 1 already has a shift on 2026-01-06, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ narchonai already has a schedule entry on 2026-01-06, skipping leave creation
+[DEBUG] ✗ swetha already has a shift on 2026-01-06, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✓ Shift 17 (Morning Shift) - Day Wednesday is ENABLED, processing
+[DEBUG] Checking Employee 4 (66) for shift 17 (Morning Shift) on 2026-01-07
+[DEBUG] Employee 4: weekly 16.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 4 on 2026-01-07
+[DEBUG] Checking Employee 8 (70) for shift 17 (Morning Shift) on 2026-01-07
+[DEBUG] Employee 8: weekly 16.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 8 on 2026-01-07
+[DEBUG] Checking Employee 2 (64) for shift 17 (Morning Shift) on 2026-01-07
+[DEBUG] Employee 2: weekly 16.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 2 on 2026-01-07
+[DEBUG] Checking Employee 3 (65) for shift 17 (Morning Shift) on 2026-01-07
+[DEBUG] Employee 3: weekly 16.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 3 on 2026-01-07
+[DEBUG] Checking Employee 1 (63) for shift 17 (Morning Shift) on 2026-01-07
+[DEBUG] Employee 1: weekly 16.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 1 on 2026-01-07
+[DEBUG] ✓ Shift 18 (Afternoon Shift) - Day Wednesday is ENABLED, processing
+[DEBUG] ✗ Employee 4 already has a shift on 2026-01-07, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 8 already has a shift on 2026-01-07, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 2 already has a shift on 2026-01-07, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 3 already has a shift on 2026-01-07, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 1 already has a shift on 2026-01-07, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ narchonai already has a schedule entry on 2026-01-07, skipping leave creation
+[DEBUG] Checking swetha (114) for shift 18 (Afternoon Shift) on 2026-01-07
+[DEBUG] swetha: weekly 16.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for swetha on 2026-01-07
+[DEBUG] ✓ Shift 19 (Evening Shift) - Day Wednesday is ENABLED, processing
+[DEBUG] ✗ Employee 4 already has a shift on 2026-01-07, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 8 already has a shift on 2026-01-07, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 2 already has a shift on 2026-01-07, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 3 already has a shift on 2026-01-07, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 1 already has a shift on 2026-01-07, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ narchonai already has a schedule entry on 2026-01-07, skipping leave creation
+[DEBUG] ✗ swetha already has a shift on 2026-01-07, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✓ Shift 17 (Morning Shift) - Day Thursday is ENABLED, processing
+[DEBUG] Checking Employee 4 (66) for shift 17 (Morning Shift) on 2026-01-08
+[DEBUG] Employee 4: weekly 24.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 4 on 2026-01-08
+[DEBUG] Checking Employee 8 (70) for shift 17 (Morning Shift) on 2026-01-08
+[DEBUG] Employee 8: weekly 24.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 8 on 2026-01-08
+[DEBUG] Checking Employee 2 (64) for shift 17 (Morning Shift) on 2026-01-08
+[DEBUG] Employee 2: weekly 24.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 2 on 2026-01-08
+[DEBUG] Checking Employee 3 (65) for shift 17 (Morning Shift) on 2026-01-08
+[DEBUG] Employee 3: weekly 24.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 3 on 2026-01-08
+[DEBUG] Checking Employee 1 (63) for shift 17 (Morning Shift) on 2026-01-08
+[DEBUG] Employee 1: weekly 24.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 1 on 2026-01-08
+[DEBUG] ✓ Shift 18 (Afternoon Shift) - Day Thursday is ENABLED, processing
+[DEBUG] ✗ Employee 4 already has a shift on 2026-01-08, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 8 already has a shift on 2026-01-08, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 2 already has a shift on 2026-01-08, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 3 already has a shift on 2026-01-08, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 1 already has a shift on 2026-01-08, skipping (NO DOUBLE SHIFTS)
+[DEBUG] Checking narchonai (113) for shift 18 (Afternoon Shift) on 2026-01-08
+[DEBUG] narchonai: weekly 0.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for narchonai on 2026-01-08
+[DEBUG] Checking swetha (114) for shift 18 (Afternoon Shift) on 2026-01-08
+[DEBUG] swetha: weekly 24.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for swetha on 2026-01-08
+[DEBUG] ✓ Shift 19 (Evening Shift) - Day Thursday is ENABLED, processing
+[DEBUG] ✗ Employee 4 already has a shift on 2026-01-08, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 8 already has a shift on 2026-01-08, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 2 already has a shift on 2026-01-08, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 3 already has a shift on 2026-01-08, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 1 already has a shift on 2026-01-08, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ narchonai already has a shift on 2026-01-08, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ swetha already has a shift on 2026-01-08, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✓ Shift 17 (Morning Shift) - Day Friday is ENABLED, processing
+[DEBUG] Checking Employee 4 (66) for shift 17 (Morning Shift) on 2026-01-09
+[DEBUG] Employee 4: weekly 32.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 4 on 2026-01-09
+[DEBUG] Checking Employee 8 (70) for shift 17 (Morning Shift) on 2026-01-09
+[DEBUG] Employee 8: weekly 32.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 8 on 2026-01-09
+[DEBUG] Checking Employee 2 (64) for shift 17 (Morning Shift) on 2026-01-09
+[DEBUG] Employee 2: weekly 32.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 2 on 2026-01-09
+[DEBUG] Checking Employee 3 (65) for shift 17 (Morning Shift) on 2026-01-09
+[DEBUG] Employee 3: weekly 32.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 3 on 2026-01-09
+[DEBUG] Checking Employee 1 (63) for shift 17 (Morning Shift) on 2026-01-09
+[DEBUG] Employee 1: weekly 32.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 1 on 2026-01-09
+[DEBUG] ✓ Shift 18 (Afternoon Shift) - Day Friday is ENABLED, processing
+[DEBUG] ✗ Employee 4 already has a shift on 2026-01-09, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 8 already has a shift on 2026-01-09, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 2 already has a shift on 2026-01-09, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 3 already has a shift on 2026-01-09, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 1 already has a shift on 2026-01-09, skipping (NO DOUBLE SHIFTS)
+[DEBUG] Checking narchonai (113) for shift 18 (Afternoon Shift) on 2026-01-09
+[DEBUG] narchonai: weekly 8.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for narchonai on 2026-01-09
+[DEBUG] Checking swetha (114) for shift 18 (Afternoon Shift) on 2026-01-09
+[DEBUG] swetha: weekly 32.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for swetha on 2026-01-09
+[DEBUG] ✓ Shift 19 (Evening Shift) - Day Friday is ENABLED, processing
+[DEBUG] ✗ Employee 4 already has a shift on 2026-01-09, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 8 already has a shift on 2026-01-09, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 2 already has a shift on 2026-01-09, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 3 already has a shift on 2026-01-09, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 1 already has a shift on 2026-01-09, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ narchonai already has a shift on 2026-01-09, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ swetha already has a shift on 2026-01-09, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Shift 17 (Morning Shift) - Day Saturday is disabled, skipping
+[DEBUG] ✗ Shift 18 (Afternoon Shift) - Day Saturday is disabled, skipping
+[DEBUG] ✗ Shift 19 (Evening Shift) - Day Saturday is disabled, skipping
+[DEBUG] ✗ Shift 17 (Morning Shift) - Day Sunday is disabled, skipping
+[DEBUG] ✗ Shift 18 (Afternoon Shift) - Day Sunday is disabled, skipping
+[DEBUG] ✗ Shift 19 (Evening Shift) - Day Sunday is disabled, skipping
+INFO:     127.0.0.1:65148 - "POST /schedules/generate?start_date=2026-01-05&end_date=2026-01-11&regenerate=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65148 - "GET /schedules?start_date=2026-01-05&end_date=2026-01-11 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65148 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65148 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65148 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65148 - "GET /schedules?start_date=2025-12-25&end_date=2025-12-25 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65148 - "GET /leave-statistics HTTP/1.1" 200 OK
+[DEBUG] Schedule generation started for dates 2026-01-05 to 2026-01-11
+[DEBUG] Department ID: 11
+INFO:     127.0.0.1:49317 - "POST /schedules/generate?start_date=2026-01-05&end_date=2026-01-11&regenerate=false HTTP/1.1" 200 OK
+[DEBUG] Schedule generation started for dates 2026-01-05 to 2026-01-11
+[DEBUG] Department ID: 11
+[DEBUG] Found 1 schedules with check-in records - will skip deletion
+[DEBUG] Regenerating - deleting 36 existing schedules (excluding ones with check-ins)
+[DEBUG] Deleting 32 work shift schedules (excluding 1 with check-ins)
+[DEBUG] Found 4 roles
+[DEBUG] Found 3 shifts
+[DEBUG] Processing 3 shifts for schedule_config validation
+[DEBUG] Final Shift: 17 - Morning Shift, enabled_days=['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
+[DEBUG] Final Shift: 18 - Afternoon Shift, enabled_days=['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
+[DEBUG] Final Shift: 19 - Evening Shift, enabled_days=['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
+[DEBUG] Found 12 employees
+[DEBUG] Employee: 66 - Employee 4, active=True, weekly_hours=40.0, daily_max=8.0, shifts_per_week=5
+[DEBUG] Employee: 67 - Employee 5, active=True, weekly_hours=40.0, daily_max=8.0, shifts_per_week=5
+[DEBUG] Employee: 68 - Employee 6, active=True, weekly_hours=40.0, daily_max=8.0, shifts_per_week=5
+[DEBUG] Employee: 69 - Employee 7, active=True, weekly_hours=40.0, daily_max=8.0, shifts_per_week=5
+[DEBUG] Employee: 70 - Employee 8, active=True, weekly_hours=40.0, daily_max=8.0, shifts_per_week=5
+[DEBUG] Employee: 71 - Employee 9, active=True, weekly_hours=40.0, daily_max=8.0, shifts_per_week=5
+[DEBUG] Employee: 72 - Employee 10, active=True, weekly_hours=40.0, daily_max=8.0, shifts_per_week=5
+[DEBUG] Employee: 64 - Employee 2, active=True, weekly_hours=40.0, daily_max=8.0, shifts_per_week=5
+[DEBUG] Employee: 65 - Employee 3, active=True, weekly_hours=40.0, daily_max=8.0, shifts_per_week=5
+[DEBUG] Employee: 63 - Employee 1, active=True, weekly_hours=40.0, daily_max=8.0, shifts_per_week=5
+[DEBUG] Employee: 113 - narchonai, active=True, weekly_hours=40.0, daily_max=8.0, shifts_per_week=5
+[DEBUG] Employee: 114 - swetha, active=True, weekly_hours=40.0, daily_max=8.0, shifts_per_week=5
+[DEBUG] Building eligibility matrix for 3 shifts and 12 employees
+[DEBUG] Shift 17 (Morning Shift): 66 (Employee 4) is ELIGIBLE
+[DEBUG] Shift 17 (Morning Shift): 67 (Employee 5) is NOT eligible (role mismatch: emp.role=22 vs shift.role=21)
+[DEBUG] Shift 17 (Morning Shift): 68 (Employee 6) is NOT eligible (role mismatch: emp.role=23 vs shift.role=21)
+[DEBUG] Shift 17 (Morning Shift): 69 (Employee 7) is NOT eligible (role mismatch: emp.role=24 vs shift.role=21)
+[DEBUG] Shift 17 (Morning Shift): 70 (Employee 8) is ELIGIBLE
+[DEBUG] Shift 17 (Morning Shift): 71 (Employee 9) is NOT eligible (role mismatch: emp.role=22 vs shift.role=21)
+[DEBUG] Shift 17 (Morning Shift): 72 (Employee 10) is NOT eligible (role mismatch: emp.role=23 vs shift.role=21)
+[DEBUG] Shift 17 (Morning Shift): 64 (Employee 2) is ELIGIBLE
+[DEBUG] Shift 17 (Morning Shift): 65 (Employee 3) is ELIGIBLE
+[DEBUG] Shift 17 (Morning Shift): 63 (Employee 1) is ELIGIBLE
+[DEBUG] Shift 17 (Morning Shift): 113 (narchonai) is ELIGIBLE
+[DEBUG] Shift 17 (Morning Shift): 114 (swetha) is ELIGIBLE
+[DEBUG] Shift 18 (Afternoon Shift): 66 (Employee 4) is ELIGIBLE
+[DEBUG] Shift 18 (Afternoon Shift): 67 (Employee 5) is NOT eligible (role mismatch: emp.role=22 vs shift.role=21)
+[DEBUG] Shift 18 (Afternoon Shift): 68 (Employee 6) is NOT eligible (role mismatch: emp.role=23 vs shift.role=21)
+[DEBUG] Shift 18 (Afternoon Shift): 69 (Employee 7) is NOT eligible (role mismatch: emp.role=24 vs shift.role=21)
+[DEBUG] Shift 18 (Afternoon Shift): 70 (Employee 8) is ELIGIBLE
+[DEBUG] Shift 18 (Afternoon Shift): 71 (Employee 9) is NOT eligible (role mismatch: emp.role=22 vs shift.role=21)
+[DEBUG] Shift 18 (Afternoon Shift): 72 (Employee 10) is NOT eligible (role mismatch: emp.role=23 vs shift.role=21)
+[DEBUG] Shift 18 (Afternoon Shift): 64 (Employee 2) is ELIGIBLE
+[DEBUG] Shift 18 (Afternoon Shift): 65 (Employee 3) is ELIGIBLE
+[DEBUG] Shift 18 (Afternoon Shift): 63 (Employee 1) is ELIGIBLE
+[DEBUG] Shift 18 (Afternoon Shift): 113 (narchonai) is ELIGIBLE
+[DEBUG] Shift 18 (Afternoon Shift): 114 (swetha) is ELIGIBLE
+[DEBUG] Shift 19 (Evening Shift): 66 (Employee 4) is ELIGIBLE
+[DEBUG] Shift 19 (Evening Shift): 67 (Employee 5) is NOT eligible (role mismatch: emp.role=22 vs shift.role=21)
+[DEBUG] Shift 19 (Evening Shift): 68 (Employee 6) is NOT eligible (role mismatch: emp.role=23 vs shift.role=21)
+[DEBUG] Shift 19 (Evening Shift): 69 (Employee 7) is NOT eligible (role mismatch: emp.role=24 vs shift.role=21)
+[DEBUG] Shift 19 (Evening Shift): 70 (Employee 8) is ELIGIBLE
+[DEBUG] Shift 19 (Evening Shift): 71 (Employee 9) is NOT eligible (role mismatch: emp.role=22 vs shift.role=21)
+[DEBUG] Shift 19 (Evening Shift): 72 (Employee 10) is NOT eligible (role mismatch: emp.role=23 vs shift.role=21)
+[DEBUG] Shift 19 (Evening Shift): 64 (Employee 2) is ELIGIBLE
+[DEBUG] Shift 19 (Evening Shift): 65 (Employee 3) is ELIGIBLE
+[DEBUG] Shift 19 (Evening Shift): 63 (Employee 1) is ELIGIBLE
+[DEBUG] Shift 19 (Evening Shift): 113 (narchonai) is ELIGIBLE
+[DEBUG] Shift 19 (Evening Shift): 114 (swetha) is ELIGIBLE
+[DEBUG] ✓ Shift 17 (Morning Shift) - Day Monday is ENABLED, processing
+[DEBUG] Checking Employee 4 (66) for shift 17 (Morning Shift) on 2026-01-05
+[DEBUG] Employee 4: weekly 0.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 4 on 2026-01-05
+[DEBUG] Checking Employee 8 (70) for shift 17 (Morning Shift) on 2026-01-05
+[DEBUG] Employee 8: weekly 0.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 8 on 2026-01-05
+[DEBUG] Checking Employee 2 (64) for shift 17 (Morning Shift) on 2026-01-05
+[DEBUG] Employee 2: weekly 0.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 2 on 2026-01-05
+[DEBUG] Checking Employee 3 (65) for shift 17 (Morning Shift) on 2026-01-05
+[DEBUG] Employee 3: weekly 0.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 3 on 2026-01-05
+[DEBUG] Checking Employee 1 (63) for shift 17 (Morning Shift) on 2026-01-05
+[DEBUG] Employee 1: weekly 0.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 1 on 2026-01-05
+[DEBUG] ✓ Shift 18 (Afternoon Shift) - Day Monday is ENABLED, processing
+[DEBUG] ✗ Employee 4 already has a shift on 2026-01-05, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 8 already has a shift on 2026-01-05, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 2 already has a shift on 2026-01-05, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 3 already has a shift on 2026-01-05, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 1 already has a shift on 2026-01-05, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ narchonai already has a schedule entry on 2026-01-05, skipping leave creation
+[DEBUG] Checking swetha (114) for shift 18 (Afternoon Shift) on 2026-01-05
+[DEBUG] swetha: weekly 0.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for swetha on 2026-01-05
+[DEBUG] ✓ Shift 19 (Evening Shift) - Day Monday is ENABLED, processing
+[DEBUG] ✗ Employee 4 already has a shift on 2026-01-05, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 8 already has a shift on 2026-01-05, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 2 already has a shift on 2026-01-05, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 3 already has a shift on 2026-01-05, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 1 already has a shift on 2026-01-05, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ narchonai already has a schedule entry on 2026-01-05, skipping leave creation
+[DEBUG] ✗ swetha already has a shift on 2026-01-05, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✓ Shift 17 (Morning Shift) - Day Tuesday is ENABLED, processing
+[DEBUG] Checking Employee 4 (66) for shift 17 (Morning Shift) on 2026-01-06
+[DEBUG] Employee 4: weekly 8.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 4 on 2026-01-06
+[DEBUG] Checking Employee 8 (70) for shift 17 (Morning Shift) on 2026-01-06
+[DEBUG] Employee 8: weekly 8.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 8 on 2026-01-06
+[DEBUG] Checking Employee 2 (64) for shift 17 (Morning Shift) on 2026-01-06
+[DEBUG] Employee 2: weekly 8.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 2 on 2026-01-06
+[DEBUG] Checking Employee 3 (65) for shift 17 (Morning Shift) on 2026-01-06
+[DEBUG] Employee 3: weekly 8.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 3 on 2026-01-06
+[DEBUG] Checking Employee 1 (63) for shift 17 (Morning Shift) on 2026-01-06
+[DEBUG] Employee 1: weekly 8.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 1 on 2026-01-06
+[DEBUG] ✓ Shift 18 (Afternoon Shift) - Day Tuesday is ENABLED, processing
+[DEBUG] ✗ Employee 4 already has a shift on 2026-01-06, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 8 already has a shift on 2026-01-06, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 2 already has a shift on 2026-01-06, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 3 already has a shift on 2026-01-06, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 1 already has a shift on 2026-01-06, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ narchonai already has a schedule entry on 2026-01-06, skipping leave creation
+[DEBUG] Checking swetha (114) for shift 18 (Afternoon Shift) on 2026-01-06
+[DEBUG] swetha: weekly 8.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for swetha on 2026-01-06
+[DEBUG] ✓ Shift 19 (Evening Shift) - Day Tuesday is ENABLED, processing
+[DEBUG] ✗ Employee 4 already has a shift on 2026-01-06, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 8 already has a shift on 2026-01-06, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 2 already has a shift on 2026-01-06, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 3 already has a shift on 2026-01-06, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 1 already has a shift on 2026-01-06, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ narchonai already has a schedule entry on 2026-01-06, skipping leave creation
+[DEBUG] ✗ swetha already has a shift on 2026-01-06, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✓ Shift 17 (Morning Shift) - Day Wednesday is ENABLED, processing
+[DEBUG] Checking Employee 4 (66) for shift 17 (Morning Shift) on 2026-01-07
+[DEBUG] Employee 4: weekly 16.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 4 on 2026-01-07
+[DEBUG] Checking Employee 8 (70) for shift 17 (Morning Shift) on 2026-01-07
+[DEBUG] Employee 8: weekly 16.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 8 on 2026-01-07
+[DEBUG] Checking Employee 2 (64) for shift 17 (Morning Shift) on 2026-01-07
+[DEBUG] Employee 2: weekly 16.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 2 on 2026-01-07
+[DEBUG] Checking Employee 3 (65) for shift 17 (Morning Shift) on 2026-01-07
+[DEBUG] Employee 3: weekly 16.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 3 on 2026-01-07
+[DEBUG] Checking Employee 1 (63) for shift 17 (Morning Shift) on 2026-01-07
+[DEBUG] Employee 1: weekly 16.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 1 on 2026-01-07
+[DEBUG] ✓ Shift 18 (Afternoon Shift) - Day Wednesday is ENABLED, processing
+[DEBUG] ✗ Employee 4 already has a shift on 2026-01-07, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 8 already has a shift on 2026-01-07, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 2 already has a shift on 2026-01-07, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 3 already has a shift on 2026-01-07, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 1 already has a shift on 2026-01-07, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ narchonai already has a schedule entry on 2026-01-07, skipping leave creation
+[DEBUG] Checking swetha (114) for shift 18 (Afternoon Shift) on 2026-01-07
+[DEBUG] swetha: weekly 16.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for swetha on 2026-01-07
+[DEBUG] ✓ Shift 19 (Evening Shift) - Day Wednesday is ENABLED, processing
+[DEBUG] ✗ Employee 4 already has a shift on 2026-01-07, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 8 already has a shift on 2026-01-07, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 2 already has a shift on 2026-01-07, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 3 already has a shift on 2026-01-07, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 1 already has a shift on 2026-01-07, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ narchonai already has a schedule entry on 2026-01-07, skipping leave creation
+[DEBUG] ✗ swetha already has a shift on 2026-01-07, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✓ Shift 17 (Morning Shift) - Day Thursday is ENABLED, processing
+[DEBUG] Checking Employee 4 (66) for shift 17 (Morning Shift) on 2026-01-08
+[DEBUG] Employee 4: weekly 24.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 4 on 2026-01-08
+[DEBUG] Checking Employee 8 (70) for shift 17 (Morning Shift) on 2026-01-08
+[DEBUG] Employee 8: weekly 24.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 8 on 2026-01-08
+[DEBUG] Checking Employee 2 (64) for shift 17 (Morning Shift) on 2026-01-08
+[DEBUG] Employee 2: weekly 24.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 2 on 2026-01-08
+[DEBUG] Checking Employee 3 (65) for shift 17 (Morning Shift) on 2026-01-08
+[DEBUG] Employee 3: weekly 24.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 3 on 2026-01-08
+[DEBUG] Checking Employee 1 (63) for shift 17 (Morning Shift) on 2026-01-08
+[DEBUG] Employee 1: weekly 24.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 1 on 2026-01-08
+[DEBUG] ✓ Shift 18 (Afternoon Shift) - Day Thursday is ENABLED, processing
+[DEBUG] ✗ Employee 4 already has a shift on 2026-01-08, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 8 already has a shift on 2026-01-08, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 2 already has a shift on 2026-01-08, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 3 already has a shift on 2026-01-08, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 1 already has a shift on 2026-01-08, skipping (NO DOUBLE SHIFTS)
+[DEBUG] Checking narchonai (113) for shift 18 (Afternoon Shift) on 2026-01-08
+[DEBUG] narchonai: weekly 0.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for narchonai on 2026-01-08
+[DEBUG] Checking swetha (114) for shift 18 (Afternoon Shift) on 2026-01-08
+[DEBUG] swetha: weekly 24.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for swetha on 2026-01-08
+[DEBUG] ✓ Shift 19 (Evening Shift) - Day Thursday is ENABLED, processing
+[DEBUG] ✗ Employee 4 already has a shift on 2026-01-08, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 8 already has a shift on 2026-01-08, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 2 already has a shift on 2026-01-08, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 3 already has a shift on 2026-01-08, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 1 already has a shift on 2026-01-08, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ narchonai already has a shift on 2026-01-08, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ swetha already has a shift on 2026-01-08, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✓ Shift 17 (Morning Shift) - Day Friday is ENABLED, processing
+[DEBUG] Checking Employee 4 (66) for shift 17 (Morning Shift) on 2026-01-09
+[DEBUG] Employee 4: weekly 32.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 4 on 2026-01-09
+[DEBUG] Checking Employee 8 (70) for shift 17 (Morning Shift) on 2026-01-09
+[DEBUG] Employee 8: weekly 32.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 8 on 2026-01-09
+[DEBUG] Checking Employee 2 (64) for shift 17 (Morning Shift) on 2026-01-09
+[DEBUG] Employee 2: weekly 32.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 2 on 2026-01-09
+[DEBUG] Checking Employee 3 (65) for shift 17 (Morning Shift) on 2026-01-09
+[DEBUG] Employee 3: weekly 32.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 3 on 2026-01-09
+[DEBUG] Checking Employee 1 (63) for shift 17 (Morning Shift) on 2026-01-09
+[DEBUG] Employee 1: weekly 32.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 1 on 2026-01-09
+[DEBUG] ✓ Shift 18 (Afternoon Shift) - Day Friday is ENABLED, processing
+[DEBUG] ✗ Employee 4 already has a shift on 2026-01-09, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 8 already has a shift on 2026-01-09, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 2 already has a shift on 2026-01-09, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 3 already has a shift on 2026-01-09, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 1 already has a shift on 2026-01-09, skipping (NO DOUBLE SHIFTS)
+[DEBUG] Checking narchonai (113) for shift 18 (Afternoon Shift) on 2026-01-09
+[DEBUG] narchonai: weekly 8.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for narchonai on 2026-01-09
+[DEBUG] Checking swetha (114) for shift 18 (Afternoon Shift) on 2026-01-09
+[DEBUG] swetha: weekly 32.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for swetha on 2026-01-09
+[DEBUG] ✓ Shift 19 (Evening Shift) - Day Friday is ENABLED, processing
+[DEBUG] ✗ Employee 4 already has a shift on 2026-01-09, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 8 already has a shift on 2026-01-09, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 2 already has a shift on 2026-01-09, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 3 already has a shift on 2026-01-09, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 1 already has a shift on 2026-01-09, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ narchonai already has a shift on 2026-01-09, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ swetha already has a shift on 2026-01-09, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Shift 17 (Morning Shift) - Day Saturday is disabled, skipping
+[DEBUG] ✗ Shift 18 (Afternoon Shift) - Day Saturday is disabled, skipping
+[DEBUG] ✗ Shift 19 (Evening Shift) - Day Saturday is disabled, skipping
+[DEBUG] ✗ Shift 17 (Morning Shift) - Day Sunday is disabled, skipping
+[DEBUG] ✗ Shift 18 (Afternoon Shift) - Day Sunday is disabled, skipping
+[DEBUG] ✗ Shift 19 (Evening Shift) - Day Sunday is disabled, skipping
+INFO:     127.0.0.1:49317 - "POST /schedules/generate?start_date=2026-01-05&end_date=2026-01-11&regenerate=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49317 - "GET /schedules?start_date=2026-01-05&end_date=2026-01-11 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49317 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58507 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55480 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58581 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50576 - "GET /leave-statistics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56926 - "GET /schedules?start_date=2025-12-25&end_date=2025-12-25 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56926 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64581 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64050 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49737 - "GET /leave-statistics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52110 - "GET /schedules?start_date=2025-12-25&end_date=2025-12-25 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52110 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56788 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56002 - "OPTIONS /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57374 - "OPTIONS /schedules?start_date=2025-12-25&end_date=2025-12-25 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61036 - "OPTIONS /leave-statistics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57374 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61036 - "GET /leave-statistics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56002 - "GET /schedules?start_date=2025-12-25&end_date=2025-12-25 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56002 - "OPTIONS /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56002 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54578 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60413 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51921 - "GET /leave-statistics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49164 - "GET /schedules?start_date=2025-12-25&end_date=2025-12-25 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56683 - "POST /token HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56683 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56683 - "OPTIONS /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56683 - "OPTIONS /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56683 - "OPTIONS /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56683 - "OPTIONS /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56683 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56683 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56683 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56683 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56683 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53658 - "OPTIONS /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57128 - "OPTIONS /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56683 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53658 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57128 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53658 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55363 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53866 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49312 - "GET /schedules?start_date=2025-12-25&end_date=2025-12-25 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53866 - "GET /leave-statistics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60984 - "OPTIONS /employees/70 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60984 - "PUT /employees/70 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60984 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60984 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60984 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64498 - "POST /token HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64498 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64498 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64498 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64498 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64498 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64498 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64498 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49666 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62533 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49666 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63304 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60834 - "GET /leave-statistics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52792 - "GET /schedules?start_date=2025-12-25&end_date=2025-12-25 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52792 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56082 - "PUT /employees/70 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56082 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56082 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56082 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56725 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63796 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56082 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50370 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51268 - "OPTIONS /messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51268 - "OPTIONS /messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51268 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51268 - "GET /messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51268 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51268 - "GET /messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51268 - "OPTIONS /attendance?start_date=2025-12-25&end_date=2025-12-25 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51954 - "OPTIONS /attendance?start_date=2025-12-25&end_date=2025-12-25 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51268 - "GET /attendance?start_date=2025-12-25&end_date=2025-12-25 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51268 - "GET /attendance?start_date=2025-12-25&end_date=2025-12-25 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63183 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56192 - "GET /leave-statistics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64663 - "GET /schedules?start_date=2025-12-25&end_date=2025-12-25 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55038 - "POST /token HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:54206 - "POST /token HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54206 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54206 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54206 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54206 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54206 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54206 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58738 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60328 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57829 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60328 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57829 - "OPTIONS /schedules?start_date=2025-12-22&end_date=2025-12-28 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58738 - "OPTIONS /calendar/holidays?year=2025&month=12 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60328 - "OPTIONS /schedules?start_date=2025-12-22&end_date=2025-12-28 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55936 - "OPTIONS /calendar/holidays?year=2025&month=12 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58738 - "GET /calendar/holidays?year=2025&month=12 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58738 - "GET /calendar/holidays?year=2025&month=12 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60328 - "GET /schedules?start_date=2025-12-22&end_date=2025-12-28 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60328 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58738 - "GET /schedules?start_date=2025-12-22&end_date=2025-12-28 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58738 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53144 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53144 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53144 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53144 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63522 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63522 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51157 - "GET /leave-statistics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49666 - "GET /schedules?start_date=2025-12-25&end_date=2025-12-25 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65372 - "PUT /employees/70 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65372 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65372 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54906 - "POST /token HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:54187 - "POST /token HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54187 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54187 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54187 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54187 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54187 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54187 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58761 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64798 - "GET /leave-statistics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63724 - "GET /schedules?start_date=2025-12-25&end_date=2025-12-25 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51119 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62853 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50893 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56300 - "GET /leave-statistics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52038 - "GET /schedules?start_date=2025-12-25&end_date=2025-12-25 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56240 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49844 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59641 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59641 - "GET /schedules?start_date=2025-12-25&end_date=2025-12-25 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59641 - "GET /leave-statistics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64916 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60194 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63371 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61249 - "GET /leave-statistics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62191 - "GET /schedules?start_date=2025-12-25&end_date=2025-12-25 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64724 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61047 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61162 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61162 - "GET /schedules?start_date=2025-12-25&end_date=2025-12-25 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61162 - "GET /leave-statistics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63496 - "OPTIONS /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63496 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64163 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54039 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58584 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54039 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58584 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50128 - "OPTIONS /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56097 - "OPTIONS /schedules?start_date=2025-12-25&end_date=2025-12-25 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50128 - "OPTIONS /leave-statistics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56097 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50128 - "GET /schedules?start_date=2025-12-25&end_date=2025-12-25 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56097 - "GET /leave-statistics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56097 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49666 - "GET /leave-statistics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56097 - "GET /schedules?start_date=2025-12-25&end_date=2025-12-25 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56097 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63514 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53145 - "GET /leave-statistics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63514 - "GET /schedules?start_date=2025-12-25&end_date=2025-12-25 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63514 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56760 - "POST /token HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56760 - "OPTIONS /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56760 - "OPTIONS /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56760 - "OPTIONS /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56760 - "OPTIONS /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56760 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56760 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56760 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56760 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56760 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64678 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59553 - "POST /token HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59553 - "OPTIONS /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51459 - "OPTIONS /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52572 - "OPTIONS /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49206 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51459 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49206 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52572 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59553 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49206 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49206 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59553 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63903 - "OPTIONS /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52430 - "OPTIONS /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57446 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52430 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63903 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52430 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52430 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56853 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64188 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49721 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49721 - "OPTIONS /employees HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49721 - "POST /employees HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49721 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49721 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49860 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54898 - "POST /token HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54898 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54898 - "OPTIONS /schedules?start_date=2025-12-25&end_date=2025-12-25 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54898 - "OPTIONS /leave-statistics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54898 - "OPTIONS /schedules?start_date=2025-12-25&end_date=2025-12-25 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54898 - "OPTIONS /leave-statistics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54898 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54898 - "GET /schedules?start_date=2025-12-25&end_date=2025-12-25 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54898 - "GET /leave-statistics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54898 - "GET /schedules?start_date=2025-12-25&end_date=2025-12-25 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54898 - "GET /leave-statistics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54898 - "GET /attendance?start_date=2025-12-25&end_date=2025-12-25 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54898 - "GET /attendance?start_date=2025-12-25&end_date=2025-12-25 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54898 - "OPTIONS /employee/check-in HTTP/1.1" 200 OK
+[CHECK-IN] User ID: 130, Date: 2025-12-25
+[CHECK-IN] Employee found: 115, name: sara azhar
+[CHECK-IN ERROR] No scheduled shift for today. Please contact your manager. (Employee: 115, Date: 2025-12-25)
+INFO:     127.0.0.1:51752 - "POST /employee/check-in HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:51752 - "GET /attendance?start_date=2025-12-25&end_date=2025-12-25 HTTP/1.1" 200 OK
+[CHECK-IN] User ID: 130, Date: 2025-12-25
+[CHECK-IN] Employee found: 115, name: sara azhar
+[CHECK-IN ERROR] No scheduled shift for today. Please contact your manager. (Employee: 115, Date: 2025-12-25)
+INFO:     127.0.0.1:51752 - "POST /employee/check-in HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:51752 - "GET /attendance?start_date=2025-12-25&end_date=2025-12-25 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63293 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63293 - "POST /token HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63293 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62141 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64230 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63293 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57159 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62141 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62141 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57159 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63293 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57159 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63293 - "GET /calendar/holidays?year=2025&month=12 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63293 - "GET /calendar/holidays?year=2025&month=12 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57159 - "GET /schedules?start_date=2025-12-22&end_date=2025-12-28 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57159 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63293 - "GET /schedules?start_date=2025-12-22&end_date=2025-12-28 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63293 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63293 - "OPTIONS /schedules/generate?start_date=2025-12-22&end_date=2025-12-28&regenerate=false HTTP/1.1" 200 OK
+[DEBUG] Schedule generation started for dates 2025-12-22 to 2025-12-28
+[DEBUG] Department ID: 11
+INFO:     127.0.0.1:57159 - "POST /schedules/generate?start_date=2025-12-22&end_date=2025-12-28&regenerate=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57159 - "OPTIONS /schedules/generate?start_date=2025-12-22&end_date=2025-12-28&regenerate=true HTTP/1.1" 200 OK
+[DEBUG] Schedule generation started for dates 2025-12-22 to 2025-12-28
+[DEBUG] Department ID: 11
+[DEBUG] Found 1 schedules with check-in records - will skip deletion
+[DEBUG] Regenerating - deleting 37 existing schedules (excluding ones with check-ins)
+[DEBUG] Deleting 34 work shift schedules (excluding 1 with check-ins)
+[DEBUG] Found 4 roles
+[DEBUG] Found 3 shifts
+[DEBUG] Processing 3 shifts for schedule_config validation
+[DEBUG] Final Shift: 17 - Morning Shift, enabled_days=['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
+[DEBUG] Final Shift: 18 - Afternoon Shift, enabled_days=['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
+[DEBUG] Final Shift: 19 - Evening Shift, enabled_days=['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
+[DEBUG] Found 13 employees
+[DEBUG] Employee: 66 - Employee 4, active=True, weekly_hours=40.0, daily_max=8.0, shifts_per_week=5
+[DEBUG] Employee: 67 - Employee 5, active=True, weekly_hours=40.0, daily_max=8.0, shifts_per_week=5
+[DEBUG] Employee: 68 - Employee 6, active=True, weekly_hours=40.0, daily_max=8.0, shifts_per_week=5
+[DEBUG] Employee: 69 - Employee 7, active=True, weekly_hours=40.0, daily_max=8.0, shifts_per_week=5
+[DEBUG] Employee: 71 - Employee 9, active=True, weekly_hours=40.0, daily_max=8.0, shifts_per_week=5
+[DEBUG] Employee: 72 - Employee 10, active=True, weekly_hours=40.0, daily_max=8.0, shifts_per_week=5
+[DEBUG] Employee: 64 - Employee 2, active=True, weekly_hours=40.0, daily_max=8.0, shifts_per_week=5
+[DEBUG] Employee: 65 - Employee 3, active=True, weekly_hours=40.0, daily_max=8.0, shifts_per_week=5
+[DEBUG] Employee: 63 - Employee 1, active=True, weekly_hours=40.0, daily_max=8.0, shifts_per_week=5
+[DEBUG] Employee: 113 - narchonai, active=True, weekly_hours=40.0, daily_max=8.0, shifts_per_week=5
+[DEBUG] Employee: 114 - swetha, active=True, weekly_hours=40.0, daily_max=8.0, shifts_per_week=5
+[DEBUG] Employee: 70 - Employee 8, active=True, weekly_hours=40.0, daily_max=8.0, shifts_per_week=5
+[DEBUG] Employee: 115 - sara, active=True, weekly_hours=40.0, daily_max=8.0, shifts_per_week=5
+[DEBUG] Building eligibility matrix for 3 shifts and 13 employees
+[DEBUG] Shift 17 (Morning Shift): 66 (Employee 4) is ELIGIBLE
+[DEBUG] Shift 17 (Morning Shift): 67 (Employee 5) is NOT eligible (role mismatch: emp.role=22 vs shift.role=21)
+[DEBUG] Shift 17 (Morning Shift): 68 (Employee 6) is NOT eligible (role mismatch: emp.role=23 vs shift.role=21)
+[DEBUG] Shift 17 (Morning Shift): 69 (Employee 7) is NOT eligible (role mismatch: emp.role=24 vs shift.role=21)
+[DEBUG] Shift 17 (Morning Shift): 71 (Employee 9) is NOT eligible (role mismatch: emp.role=22 vs shift.role=21)
+[DEBUG] Shift 17 (Morning Shift): 72 (Employee 10) is NOT eligible (role mismatch: emp.role=23 vs shift.role=21)
+[DEBUG] Shift 17 (Morning Shift): 64 (Employee 2) is ELIGIBLE
+[DEBUG] Shift 17 (Morning Shift): 65 (Employee 3) is ELIGIBLE
+[DEBUG] Shift 17 (Morning Shift): 63 (Employee 1) is ELIGIBLE
+[DEBUG] Shift 17 (Morning Shift): 113 (narchonai) is ELIGIBLE
+[DEBUG] Shift 17 (Morning Shift): 114 (swetha) is ELIGIBLE
+[DEBUG] Shift 17 (Morning Shift): 70 (Employee 8) is ELIGIBLE
+[DEBUG] Shift 17 (Morning Shift): 115 (sara) is ELIGIBLE
+[DEBUG] Shift 18 (Afternoon Shift): 66 (Employee 4) is ELIGIBLE
+[DEBUG] Shift 18 (Afternoon Shift): 67 (Employee 5) is NOT eligible (role mismatch: emp.role=22 vs shift.role=21)
+[DEBUG] Shift 18 (Afternoon Shift): 68 (Employee 6) is NOT eligible (role mismatch: emp.role=23 vs shift.role=21)
+[DEBUG] Shift 18 (Afternoon Shift): 69 (Employee 7) is NOT eligible (role mismatch: emp.role=24 vs shift.role=21)
+[DEBUG] Shift 18 (Afternoon Shift): 71 (Employee 9) is NOT eligible (role mismatch: emp.role=22 vs shift.role=21)
+[DEBUG] Shift 18 (Afternoon Shift): 72 (Employee 10) is NOT eligible (role mismatch: emp.role=23 vs shift.role=21)
+[DEBUG] Shift 18 (Afternoon Shift): 64 (Employee 2) is ELIGIBLE
+[DEBUG] Shift 18 (Afternoon Shift): 65 (Employee 3) is ELIGIBLE
+[DEBUG] Shift 18 (Afternoon Shift): 63 (Employee 1) is ELIGIBLE
+[DEBUG] Shift 18 (Afternoon Shift): 113 (narchonai) is ELIGIBLE
+[DEBUG] Shift 18 (Afternoon Shift): 114 (swetha) is ELIGIBLE
+[DEBUG] Shift 18 (Afternoon Shift): 70 (Employee 8) is ELIGIBLE
+[DEBUG] Shift 18 (Afternoon Shift): 115 (sara) is ELIGIBLE
+[DEBUG] Shift 19 (Evening Shift): 66 (Employee 4) is ELIGIBLE
+[DEBUG] Shift 19 (Evening Shift): 67 (Employee 5) is NOT eligible (role mismatch: emp.role=22 vs shift.role=21)
+[DEBUG] Shift 19 (Evening Shift): 68 (Employee 6) is NOT eligible (role mismatch: emp.role=23 vs shift.role=21)
+[DEBUG] Shift 19 (Evening Shift): 69 (Employee 7) is NOT eligible (role mismatch: emp.role=24 vs shift.role=21)
+[DEBUG] Shift 19 (Evening Shift): 71 (Employee 9) is NOT eligible (role mismatch: emp.role=22 vs shift.role=21)
+[DEBUG] Shift 19 (Evening Shift): 72 (Employee 10) is NOT eligible (role mismatch: emp.role=23 vs shift.role=21)
+[DEBUG] Shift 19 (Evening Shift): 64 (Employee 2) is ELIGIBLE
+[DEBUG] Shift 19 (Evening Shift): 65 (Employee 3) is ELIGIBLE
+[DEBUG] Shift 19 (Evening Shift): 63 (Employee 1) is ELIGIBLE
+[DEBUG] Shift 19 (Evening Shift): 113 (narchonai) is ELIGIBLE
+[DEBUG] Shift 19 (Evening Shift): 114 (swetha) is ELIGIBLE
+[DEBUG] Shift 19 (Evening Shift): 70 (Employee 8) is ELIGIBLE
+[DEBUG] Shift 19 (Evening Shift): 115 (sara) is ELIGIBLE
+[DEBUG] ✓ Shift 17 (Morning Shift) - Day Monday is ENABLED, processing
+[DEBUG] Checking Employee 4 (66) for shift 17 (Morning Shift) on 2025-12-22
+[DEBUG] Employee 4: weekly 0.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 4 on 2025-12-22
+[DEBUG] Checking Employee 2 (64) for shift 17 (Morning Shift) on 2025-12-22
+[DEBUG] Employee 2: weekly 0.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 2 on 2025-12-22
+[DEBUG] Checking Employee 3 (65) for shift 17 (Morning Shift) on 2025-12-22
+[DEBUG] Employee 3: weekly 0.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 3 on 2025-12-22
+[DEBUG] Checking Employee 1 (63) for shift 17 (Morning Shift) on 2025-12-22
+[DEBUG] Employee 1: weekly 0.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 1 on 2025-12-22
+[DEBUG] Checking narchonai (113) for shift 17 (Morning Shift) on 2025-12-22
+[DEBUG] narchonai: weekly 0.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for narchonai on 2025-12-22
+[DEBUG] ✓ Shift 18 (Afternoon Shift) - Day Monday is ENABLED, processing
+[DEBUG] ✗ Employee 4 already has a shift on 2025-12-22, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 2 already has a shift on 2025-12-22, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 3 already has a shift on 2025-12-22, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 1 already has a shift on 2025-12-22, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ narchonai already has a shift on 2025-12-22, skipping (NO DOUBLE SHIFTS)
+[DEBUG] Checking swetha (114) for shift 18 (Afternoon Shift) on 2025-12-22
+[DEBUG] swetha: weekly 8.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for swetha on 2025-12-22
+[DEBUG] Checking Employee 8 (70) for shift 18 (Afternoon Shift) on 2025-12-22
+[DEBUG] Employee 8: weekly 0.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 8 on 2025-12-22
+[DEBUG] Checking sara (115) for shift 18 (Afternoon Shift) on 2025-12-22
+[DEBUG] sara: weekly 0.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for sara on 2025-12-22
+[DEBUG] ✓ Shift 19 (Evening Shift) - Day Monday is ENABLED, processing
+[DEBUG] ✗ Employee 4 already has a shift on 2025-12-22, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 2 already has a shift on 2025-12-22, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 3 already has a shift on 2025-12-22, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 1 already has a shift on 2025-12-22, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ narchonai already has a shift on 2025-12-22, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ swetha already has a shift on 2025-12-22, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 8 already has a shift on 2025-12-22, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ sara already has a shift on 2025-12-22, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✓ Shift 17 (Morning Shift) - Day Tuesday is ENABLED, processing
+[DEBUG] Checking Employee 4 (66) for shift 17 (Morning Shift) on 2025-12-23
+[DEBUG] Employee 4: weekly 8.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 4 on 2025-12-23
+[DEBUG] Checking Employee 2 (64) for shift 17 (Morning Shift) on 2025-12-23
+[DEBUG] Employee 2: weekly 8.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 2 on 2025-12-23
+[DEBUG] Checking Employee 3 (65) for shift 17 (Morning Shift) on 2025-12-23
+[DEBUG] Employee 3: weekly 8.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 3 on 2025-12-23
+[DEBUG] Checking Employee 1 (63) for shift 17 (Morning Shift) on 2025-12-23
+[DEBUG] Employee 1: weekly 8.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 1 on 2025-12-23
+[DEBUG] Checking narchonai (113) for shift 17 (Morning Shift) on 2025-12-23
+[DEBUG] narchonai: weekly 8.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for narchonai on 2025-12-23
+[DEBUG] ✓ Shift 18 (Afternoon Shift) - Day Tuesday is ENABLED, processing
+[DEBUG] ✗ Employee 4 already has a shift on 2025-12-23, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 2 already has a shift on 2025-12-23, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 3 already has a shift on 2025-12-23, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 1 already has a shift on 2025-12-23, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ narchonai already has a shift on 2025-12-23, skipping (NO DOUBLE SHIFTS)
+[DEBUG] Checking swetha (114) for shift 18 (Afternoon Shift) on 2025-12-23
+[DEBUG] swetha: weekly 16.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for swetha on 2025-12-23
+[DEBUG] Checking Employee 8 (70) for shift 18 (Afternoon Shift) on 2025-12-23
+[DEBUG] Employee 8: weekly 8.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 8 on 2025-12-23
+[DEBUG] Checking sara (115) for shift 18 (Afternoon Shift) on 2025-12-23
+[DEBUG] sara: weekly 8.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for sara on 2025-12-23
+[DEBUG] ✓ Shift 19 (Evening Shift) - Day Tuesday is ENABLED, processing
+[DEBUG] ✗ Employee 4 already has a shift on 2025-12-23, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 2 already has a shift on 2025-12-23, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 3 already has a shift on 2025-12-23, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 1 already has a shift on 2025-12-23, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ narchonai already has a shift on 2025-12-23, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ swetha already has a shift on 2025-12-23, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 8 already has a shift on 2025-12-23, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ sara already has a shift on 2025-12-23, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✓ Shift 17 (Morning Shift) - Day Wednesday is ENABLED, processing
+[DEBUG] Checking Employee 4 (66) for shift 17 (Morning Shift) on 2025-12-24
+[DEBUG] Employee 4: weekly 16.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 4 on 2025-12-24
+[DEBUG] Checking Employee 2 (64) for shift 17 (Morning Shift) on 2025-12-24
+[DEBUG] Employee 2: weekly 16.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 2 on 2025-12-24
+[DEBUG] Checking Employee 3 (65) for shift 17 (Morning Shift) on 2025-12-24
+[DEBUG] Employee 3: weekly 16.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 3 on 2025-12-24
+[DEBUG] Checking Employee 1 (63) for shift 17 (Morning Shift) on 2025-12-24
+[DEBUG] Employee 1: weekly 16.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 1 on 2025-12-24
+[DEBUG] Checking narchonai (113) for shift 17 (Morning Shift) on 2025-12-24
+[DEBUG] narchonai: weekly 16.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for narchonai on 2025-12-24
+[DEBUG] ✓ Shift 18 (Afternoon Shift) - Day Wednesday is ENABLED, processing
+[DEBUG] ✗ Employee 4 already has a shift on 2025-12-24, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 2 already has a shift on 2025-12-24, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 3 already has a shift on 2025-12-24, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 1 already has a shift on 2025-12-24, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ narchonai already has a shift on 2025-12-24, skipping (NO DOUBLE SHIFTS)
+[DEBUG] Checking swetha (114) for shift 18 (Afternoon Shift) on 2025-12-24
+[DEBUG] swetha: weekly 24.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for swetha on 2025-12-24
+[DEBUG] Checking Employee 8 (70) for shift 18 (Afternoon Shift) on 2025-12-24
+[DEBUG] Employee 8: weekly 16.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 8 on 2025-12-24
+[DEBUG] Checking sara (115) for shift 18 (Afternoon Shift) on 2025-12-24
+[DEBUG] sara: weekly 16.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for sara on 2025-12-24
+[DEBUG] ✓ Shift 19 (Evening Shift) - Day Wednesday is ENABLED, processing
+[DEBUG] ✗ Employee 4 already has a shift on 2025-12-24, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 2 already has a shift on 2025-12-24, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 3 already has a shift on 2025-12-24, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 1 already has a shift on 2025-12-24, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ narchonai already has a shift on 2025-12-24, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ swetha already has a shift on 2025-12-24, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 8 already has a shift on 2025-12-24, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ sara already has a shift on 2025-12-24, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✓ Shift 17 (Morning Shift) - Day Thursday is ENABLED, processing
+[DEBUG] Checking Employee 4 (66) for shift 17 (Morning Shift) on 2025-12-25
+[DEBUG] Employee 4: weekly 24.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 4 on 2025-12-25
+[DEBUG] Checking Employee 2 (64) for shift 17 (Morning Shift) on 2025-12-25
+[DEBUG] Employee 2: weekly 24.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 2 on 2025-12-25
+[DEBUG] Checking Employee 3 (65) for shift 17 (Morning Shift) on 2025-12-25
+[DEBUG] Employee 3: weekly 24.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 3 on 2025-12-25
+[DEBUG] Checking Employee 1 (63) for shift 17 (Morning Shift) on 2025-12-25
+[DEBUG] Employee 1: weekly 24.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 1 on 2025-12-25
+[DEBUG] Checking narchonai (113) for shift 17 (Morning Shift) on 2025-12-25
+[DEBUG] narchonai: weekly 24.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for narchonai on 2025-12-25
+[DEBUG] ✓ Shift 18 (Afternoon Shift) - Day Thursday is ENABLED, processing
+[DEBUG] ✗ Employee 4 already has a shift on 2025-12-25, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 2 already has a shift on 2025-12-25, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 3 already has a shift on 2025-12-25, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 1 already has a shift on 2025-12-25, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ narchonai already has a shift on 2025-12-25, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ swetha already has a shift on 2025-12-25, skipping (NO DOUBLE SHIFTS)
+[DEBUG] Checking Employee 8 (70) for shift 18 (Afternoon Shift) on 2025-12-25
+[DEBUG] Employee 8: weekly 24.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 8 on 2025-12-25
+[DEBUG] Checking sara (115) for shift 18 (Afternoon Shift) on 2025-12-25
+[DEBUG] sara: weekly 24.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for sara on 2025-12-25
+[DEBUG] ✓ Shift 19 (Evening Shift) - Day Thursday is ENABLED, processing
+[DEBUG] ✗ Employee 4 already has a shift on 2025-12-25, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 2 already has a shift on 2025-12-25, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 3 already has a shift on 2025-12-25, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 1 already has a shift on 2025-12-25, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ narchonai already has a shift on 2025-12-25, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ swetha already has a shift on 2025-12-25, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 8 already has a shift on 2025-12-25, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ sara already has a shift on 2025-12-25, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✓ Shift 17 (Morning Shift) - Day Friday is ENABLED, processing
+[DEBUG] Checking Employee 4 (66) for shift 17 (Morning Shift) on 2025-12-26
+[DEBUG] Employee 4: weekly 32.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 4 on 2025-12-26
+[DEBUG] Checking Employee 2 (64) for shift 17 (Morning Shift) on 2025-12-26
+[DEBUG] Employee 2: weekly 32.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 2 on 2025-12-26
+[DEBUG] Checking Employee 3 (65) for shift 17 (Morning Shift) on 2025-12-26
+[DEBUG] Employee 3: weekly 32.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 3 on 2025-12-26
+[DEBUG] Checking Employee 1 (63) for shift 17 (Morning Shift) on 2025-12-26
+[DEBUG] Employee 1: weekly 32.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 1 on 2025-12-26
+[DEBUG] Checking narchonai (113) for shift 17 (Morning Shift) on 2025-12-26
+[DEBUG] narchonai: weekly 32.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for narchonai on 2025-12-26
+[DEBUG] ✓ Shift 18 (Afternoon Shift) - Day Friday is ENABLED, processing
+[DEBUG] ✗ Employee 4 already has a shift on 2025-12-26, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 2 already has a shift on 2025-12-26, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 3 already has a shift on 2025-12-26, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 1 already has a shift on 2025-12-26, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ narchonai already has a shift on 2025-12-26, skipping (NO DOUBLE SHIFTS)
+[DEBUG] Checking swetha (114) for shift 18 (Afternoon Shift) on 2025-12-26
+[DEBUG] swetha: weekly 32.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for swetha on 2025-12-26
+[DEBUG] Checking Employee 8 (70) for shift 18 (Afternoon Shift) on 2025-12-26
+[DEBUG] Employee 8: weekly 32.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 8 on 2025-12-26
+[DEBUG] Checking sara (115) for shift 18 (Afternoon Shift) on 2025-12-26
+[DEBUG] sara: weekly 32.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for sara on 2025-12-26
+[DEBUG] ✓ Shift 19 (Evening Shift) - Day Friday is ENABLED, processing
+[DEBUG] ✗ Employee 4 already has a shift on 2025-12-26, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 2 already has a shift on 2025-12-26, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 3 already has a shift on 2025-12-26, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 1 already has a shift on 2025-12-26, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ narchonai already has a shift on 2025-12-26, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ swetha already has a shift on 2025-12-26, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 8 already has a shift on 2025-12-26, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ sara already has a shift on 2025-12-26, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Shift 17 (Morning Shift) - Day Saturday is disabled, skipping
+[DEBUG] ✗ Shift 18 (Afternoon Shift) - Day Saturday is disabled, skipping
+[DEBUG] ✗ Shift 19 (Evening Shift) - Day Saturday is disabled, skipping
+[DEBUG] ✗ Shift 17 (Morning Shift) - Day Sunday is disabled, skipping
+[DEBUG] ✗ Shift 18 (Afternoon Shift) - Day Sunday is disabled, skipping
+[DEBUG] ✗ Shift 19 (Evening Shift) - Day Sunday is disabled, skipping
+INFO:     127.0.0.1:63293 - "POST /schedules/generate?start_date=2025-12-22&end_date=2025-12-28&regenerate=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63293 - "GET /schedules?start_date=2025-12-22&end_date=2025-12-28 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63293 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52371 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52371 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52371 - "OPTIONS /overtime-requests?status=PENDING HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59009 - "OPTIONS /overtime-requests?status=PENDING HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59009 - "GET /overtime-requests?status=PENDING HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59009 - "GET /overtime-requests?status=PENDING HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57846 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51224 - "POST /token HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51224 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51224 - "GET /schedules?start_date=2025-12-25&end_date=2025-12-25 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51224 - "GET /leave-statistics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51224 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51224 - "GET /schedules?start_date=2025-12-25&end_date=2025-12-25 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51224 - "GET /leave-statistics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51224 - "OPTIONS /attendance?start_date=2025-12-25&end_date=2025-12-25 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51224 - "OPTIONS /attendance?start_date=2025-12-25&end_date=2025-12-25 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51224 - "GET /attendance?start_date=2025-12-25&end_date=2025-12-25 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51224 - "GET /attendance?start_date=2025-12-25&end_date=2025-12-25 HTTP/1.1" 200 OK
+[CHECK-IN] User ID: 130, Date: 2025-12-25
+[CHECK-IN] Employee found: 115, name: sara azhar
+[CHECK-IN] Created attendance record for employee 115
+INFO:     127.0.0.1:51224 - "POST /employee/check-in HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51224 - "GET /attendance?start_date=2025-12-25&end_date=2025-12-25 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61300 - "OPTIONS /employee/check-out HTTP/1.1" 200 OK
+[CHECK-OUT] User ID: 130, Date: 2025-12-25
+INFO:     127.0.0.1:52206 - "POST /employee/check-out HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52206 - "GET /attendance?start_date=2025-12-25&end_date=2025-12-25 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52206 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51087 - "POST /token HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51087 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57577 - "GET /leave-statistics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54883 - "GET /schedules?start_date=2025-12-25&end_date=2025-12-25 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51087 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57577 - "GET /leave-statistics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54883 - "GET /schedules?start_date=2025-12-25&end_date=2025-12-25 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51087 - "GET /attendance?start_date=2025-12-25&end_date=2025-12-25 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51087 - "GET /attendance?start_date=2025-12-25&end_date=2025-12-25 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54664 - "POST /token HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54664 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54664 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54664 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54664 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54664 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54664 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62688 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55060 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60157 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55060 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60157 - "OPTIONS /schedules?start_date=2025-12-22&end_date=2025-12-28 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55060 - "OPTIONS /calendar/holidays?year=2025&month=12 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60157 - "OPTIONS /calendar/holidays?year=2025&month=12 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60157 - "GET /calendar/holidays?year=2025&month=12 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60157 - "GET /calendar/holidays?year=2025&month=12 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62688 - "GET /schedules?start_date=2025-12-22&end_date=2025-12-28 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62688 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60157 - "GET /schedules?start_date=2025-12-22&end_date=2025-12-28 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60157 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60157 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60157 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60157 - "GET /overtime-requests?status=PENDING HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60157 - "GET /overtime-requests?status=PENDING HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60157 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65396 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58550 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51056 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61712 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51056 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61712 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61712 - "GET /calendar/holidays?year=2025&month=12 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61712 - "GET /calendar/holidays?year=2025&month=12 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51056 - "GET /schedules?start_date=2025-12-22&end_date=2025-12-28 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51056 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61712 - "GET /schedules?start_date=2025-12-22&end_date=2025-12-28 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61712 - "GET /leave-requests HTTP/1.1" 200 OK
+[DEBUG] Schedule generation started for dates 2025-12-22 to 2025-12-28
+[DEBUG] Department ID: 11
+INFO:     127.0.0.1:61712 - "POST /schedules/generate?start_date=2025-12-22&end_date=2025-12-28&regenerate=false HTTP/1.1" 200 OK
+[DEBUG] Schedule generation started for dates 2025-12-22 to 2025-12-28
+[DEBUG] Department ID: 11
+[DEBUG] Found 2 schedules with check-in records - will skip deletion
+[DEBUG] Regenerating - deleting 42 existing schedules (excluding ones with check-ins)
+[DEBUG] Deleting 38 work shift schedules (excluding 2 with check-ins)
+[DEBUG] Found 4 roles
+[DEBUG] Found 3 shifts
+[DEBUG] Processing 3 shifts for schedule_config validation
+[DEBUG] Final Shift: 17 - Morning Shift, enabled_days=['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
+[DEBUG] Final Shift: 18 - Afternoon Shift, enabled_days=['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
+[DEBUG] Final Shift: 19 - Evening Shift, enabled_days=['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
+[DEBUG] Found 13 employees
+[DEBUG] Employee: 66 - Employee 4, active=True, weekly_hours=40.0, daily_max=8.0, shifts_per_week=5
+[DEBUG] Employee: 67 - Employee 5, active=True, weekly_hours=40.0, daily_max=8.0, shifts_per_week=5
+[DEBUG] Employee: 68 - Employee 6, active=True, weekly_hours=40.0, daily_max=8.0, shifts_per_week=5
+[DEBUG] Employee: 69 - Employee 7, active=True, weekly_hours=40.0, daily_max=8.0, shifts_per_week=5
+[DEBUG] Employee: 71 - Employee 9, active=True, weekly_hours=40.0, daily_max=8.0, shifts_per_week=5
+[DEBUG] Employee: 72 - Employee 10, active=True, weekly_hours=40.0, daily_max=8.0, shifts_per_week=5
+[DEBUG] Employee: 64 - Employee 2, active=True, weekly_hours=40.0, daily_max=8.0, shifts_per_week=5
+[DEBUG] Employee: 65 - Employee 3, active=True, weekly_hours=40.0, daily_max=8.0, shifts_per_week=5
+[DEBUG] Employee: 63 - Employee 1, active=True, weekly_hours=40.0, daily_max=8.0, shifts_per_week=5
+[DEBUG] Employee: 113 - narchonai, active=True, weekly_hours=40.0, daily_max=8.0, shifts_per_week=5
+[DEBUG] Employee: 114 - swetha, active=True, weekly_hours=40.0, daily_max=8.0, shifts_per_week=5
+[DEBUG] Employee: 70 - Employee 8, active=True, weekly_hours=40.0, daily_max=8.0, shifts_per_week=5
+[DEBUG] Employee: 115 - sara, active=True, weekly_hours=40.0, daily_max=8.0, shifts_per_week=5
+[DEBUG] Building eligibility matrix for 3 shifts and 13 employees
+[DEBUG] Shift 17 (Morning Shift): 66 (Employee 4) is ELIGIBLE
+[DEBUG] Shift 17 (Morning Shift): 67 (Employee 5) is NOT eligible (role mismatch: emp.role=22 vs shift.role=21)
+[DEBUG] Shift 17 (Morning Shift): 68 (Employee 6) is NOT eligible (role mismatch: emp.role=23 vs shift.role=21)
+[DEBUG] Shift 17 (Morning Shift): 69 (Employee 7) is NOT eligible (role mismatch: emp.role=24 vs shift.role=21)
+[DEBUG] Shift 17 (Morning Shift): 71 (Employee 9) is NOT eligible (role mismatch: emp.role=22 vs shift.role=21)
+[DEBUG] Shift 17 (Morning Shift): 72 (Employee 10) is NOT eligible (role mismatch: emp.role=23 vs shift.role=21)
+[DEBUG] Shift 17 (Morning Shift): 64 (Employee 2) is ELIGIBLE
+[DEBUG] Shift 17 (Morning Shift): 65 (Employee 3) is ELIGIBLE
+[DEBUG] Shift 17 (Morning Shift): 63 (Employee 1) is ELIGIBLE
+[DEBUG] Shift 17 (Morning Shift): 113 (narchonai) is ELIGIBLE
+[DEBUG] Shift 17 (Morning Shift): 114 (swetha) is ELIGIBLE
+[DEBUG] Shift 17 (Morning Shift): 70 (Employee 8) is ELIGIBLE
+[DEBUG] Shift 17 (Morning Shift): 115 (sara) is ELIGIBLE
+[DEBUG] Shift 18 (Afternoon Shift): 66 (Employee 4) is ELIGIBLE
+[DEBUG] Shift 18 (Afternoon Shift): 67 (Employee 5) is NOT eligible (role mismatch: emp.role=22 vs shift.role=21)
+[DEBUG] Shift 18 (Afternoon Shift): 68 (Employee 6) is NOT eligible (role mismatch: emp.role=23 vs shift.role=21)
+[DEBUG] Shift 18 (Afternoon Shift): 69 (Employee 7) is NOT eligible (role mismatch: emp.role=24 vs shift.role=21)
+[DEBUG] Shift 18 (Afternoon Shift): 71 (Employee 9) is NOT eligible (role mismatch: emp.role=22 vs shift.role=21)
+[DEBUG] Shift 18 (Afternoon Shift): 72 (Employee 10) is NOT eligible (role mismatch: emp.role=23 vs shift.role=21)
+[DEBUG] Shift 18 (Afternoon Shift): 64 (Employee 2) is ELIGIBLE
+[DEBUG] Shift 18 (Afternoon Shift): 65 (Employee 3) is ELIGIBLE
+[DEBUG] Shift 18 (Afternoon Shift): 63 (Employee 1) is ELIGIBLE
+[DEBUG] Shift 18 (Afternoon Shift): 113 (narchonai) is ELIGIBLE
+[DEBUG] Shift 18 (Afternoon Shift): 114 (swetha) is ELIGIBLE
+[DEBUG] Shift 18 (Afternoon Shift): 70 (Employee 8) is ELIGIBLE
+[DEBUG] Shift 18 (Afternoon Shift): 115 (sara) is ELIGIBLE
+[DEBUG] Shift 19 (Evening Shift): 66 (Employee 4) is ELIGIBLE
+[DEBUG] Shift 19 (Evening Shift): 67 (Employee 5) is NOT eligible (role mismatch: emp.role=22 vs shift.role=21)
+[DEBUG] Shift 19 (Evening Shift): 68 (Employee 6) is NOT eligible (role mismatch: emp.role=23 vs shift.role=21)
+[DEBUG] Shift 19 (Evening Shift): 69 (Employee 7) is NOT eligible (role mismatch: emp.role=24 vs shift.role=21)
+[DEBUG] Shift 19 (Evening Shift): 71 (Employee 9) is NOT eligible (role mismatch: emp.role=22 vs shift.role=21)
+[DEBUG] Shift 19 (Evening Shift): 72 (Employee 10) is NOT eligible (role mismatch: emp.role=23 vs shift.role=21)
+[DEBUG] Shift 19 (Evening Shift): 64 (Employee 2) is ELIGIBLE
+[DEBUG] Shift 19 (Evening Shift): 65 (Employee 3) is ELIGIBLE
+[DEBUG] Shift 19 (Evening Shift): 63 (Employee 1) is ELIGIBLE
+[DEBUG] Shift 19 (Evening Shift): 113 (narchonai) is ELIGIBLE
+[DEBUG] Shift 19 (Evening Shift): 114 (swetha) is ELIGIBLE
+[DEBUG] Shift 19 (Evening Shift): 70 (Employee 8) is ELIGIBLE
+[DEBUG] Shift 19 (Evening Shift): 115 (sara) is ELIGIBLE
+[DEBUG] ✓ Shift 17 (Morning Shift) - Day Monday is ENABLED, processing
+[DEBUG] Checking Employee 4 (66) for shift 17 (Morning Shift) on 2025-12-22
+[DEBUG] Employee 4: weekly 0.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 4 on 2025-12-22
+[DEBUG] Checking Employee 2 (64) for shift 17 (Morning Shift) on 2025-12-22
+[DEBUG] Employee 2: weekly 0.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 2 on 2025-12-22
+[DEBUG] Checking Employee 3 (65) for shift 17 (Morning Shift) on 2025-12-22
+[DEBUG] Employee 3: weekly 0.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 3 on 2025-12-22
+[DEBUG] Checking Employee 1 (63) for shift 17 (Morning Shift) on 2025-12-22
+[DEBUG] Employee 1: weekly 0.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 1 on 2025-12-22
+[DEBUG] Checking narchonai (113) for shift 17 (Morning Shift) on 2025-12-22
+[DEBUG] narchonai: weekly 0.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for narchonai on 2025-12-22
+[DEBUG] ✓ Shift 18 (Afternoon Shift) - Day Monday is ENABLED, processing
+[DEBUG] ✗ Employee 4 already has a shift on 2025-12-22, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 2 already has a shift on 2025-12-22, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 3 already has a shift on 2025-12-22, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 1 already has a shift on 2025-12-22, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ narchonai already has a shift on 2025-12-22, skipping (NO DOUBLE SHIFTS)
+[DEBUG] Checking swetha (114) for shift 18 (Afternoon Shift) on 2025-12-22
+[DEBUG] swetha: weekly 8.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for swetha on 2025-12-22
+[DEBUG] Checking Employee 8 (70) for shift 18 (Afternoon Shift) on 2025-12-22
+[DEBUG] Employee 8: weekly 0.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 8 on 2025-12-22
+[DEBUG] Checking sara (115) for shift 18 (Afternoon Shift) on 2025-12-22
+[DEBUG] sara: weekly 8.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for sara on 2025-12-22
+[DEBUG] ✓ Shift 19 (Evening Shift) - Day Monday is ENABLED, processing
+[DEBUG] ✗ Employee 4 already has a shift on 2025-12-22, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 2 already has a shift on 2025-12-22, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 3 already has a shift on 2025-12-22, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 1 already has a shift on 2025-12-22, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ narchonai already has a shift on 2025-12-22, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ swetha already has a shift on 2025-12-22, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 8 already has a shift on 2025-12-22, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ sara already has a shift on 2025-12-22, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✓ Shift 17 (Morning Shift) - Day Tuesday is ENABLED, processing
+[DEBUG] Checking Employee 4 (66) for shift 17 (Morning Shift) on 2025-12-23
+[DEBUG] Employee 4: weekly 8.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 4 on 2025-12-23
+[DEBUG] Checking Employee 2 (64) for shift 17 (Morning Shift) on 2025-12-23
+[DEBUG] Employee 2: weekly 8.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 2 on 2025-12-23
+[DEBUG] Checking Employee 3 (65) for shift 17 (Morning Shift) on 2025-12-23
+[DEBUG] Employee 3: weekly 8.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 3 on 2025-12-23
+[DEBUG] Checking Employee 1 (63) for shift 17 (Morning Shift) on 2025-12-23
+[DEBUG] Employee 1: weekly 8.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 1 on 2025-12-23
+[DEBUG] Checking narchonai (113) for shift 17 (Morning Shift) on 2025-12-23
+[DEBUG] narchonai: weekly 8.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for narchonai on 2025-12-23
+[DEBUG] ✓ Shift 18 (Afternoon Shift) - Day Tuesday is ENABLED, processing
+[DEBUG] ✗ Employee 4 already has a shift on 2025-12-23, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 2 already has a shift on 2025-12-23, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 3 already has a shift on 2025-12-23, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 1 already has a shift on 2025-12-23, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ narchonai already has a shift on 2025-12-23, skipping (NO DOUBLE SHIFTS)
+[DEBUG] Checking swetha (114) for shift 18 (Afternoon Shift) on 2025-12-23
+[DEBUG] swetha: weekly 16.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for swetha on 2025-12-23
+[DEBUG] Checking Employee 8 (70) for shift 18 (Afternoon Shift) on 2025-12-23
+[DEBUG] Employee 8: weekly 8.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 8 on 2025-12-23
+[DEBUG] Checking sara (115) for shift 18 (Afternoon Shift) on 2025-12-23
+[DEBUG] sara: weekly 16.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for sara on 2025-12-23
+[DEBUG] ✓ Shift 19 (Evening Shift) - Day Tuesday is ENABLED, processing
+[DEBUG] ✗ Employee 4 already has a shift on 2025-12-23, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 2 already has a shift on 2025-12-23, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 3 already has a shift on 2025-12-23, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 1 already has a shift on 2025-12-23, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ narchonai already has a shift on 2025-12-23, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ swetha already has a shift on 2025-12-23, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 8 already has a shift on 2025-12-23, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ sara already has a shift on 2025-12-23, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✓ Shift 17 (Morning Shift) - Day Wednesday is ENABLED, processing
+[DEBUG] Checking Employee 4 (66) for shift 17 (Morning Shift) on 2025-12-24
+[DEBUG] Employee 4: weekly 16.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 4 on 2025-12-24
+[DEBUG] Checking Employee 2 (64) for shift 17 (Morning Shift) on 2025-12-24
+[DEBUG] Employee 2: weekly 16.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 2 on 2025-12-24
+[DEBUG] Checking Employee 3 (65) for shift 17 (Morning Shift) on 2025-12-24
+[DEBUG] Employee 3: weekly 16.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 3 on 2025-12-24
+[DEBUG] Checking Employee 1 (63) for shift 17 (Morning Shift) on 2025-12-24
+[DEBUG] Employee 1: weekly 16.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 1 on 2025-12-24
+[DEBUG] Checking narchonai (113) for shift 17 (Morning Shift) on 2025-12-24
+[DEBUG] narchonai: weekly 16.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for narchonai on 2025-12-24
+[DEBUG] ✓ Shift 18 (Afternoon Shift) - Day Wednesday is ENABLED, processing
+[DEBUG] ✗ Employee 4 already has a shift on 2025-12-24, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 2 already has a shift on 2025-12-24, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 3 already has a shift on 2025-12-24, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 1 already has a shift on 2025-12-24, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ narchonai already has a shift on 2025-12-24, skipping (NO DOUBLE SHIFTS)
+[DEBUG] Checking swetha (114) for shift 18 (Afternoon Shift) on 2025-12-24
+[DEBUG] swetha: weekly 24.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for swetha on 2025-12-24
+[DEBUG] Checking Employee 8 (70) for shift 18 (Afternoon Shift) on 2025-12-24
+[DEBUG] Employee 8: weekly 16.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 8 on 2025-12-24
+[DEBUG] Checking sara (115) for shift 18 (Afternoon Shift) on 2025-12-24
+[DEBUG] sara: weekly 24.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for sara on 2025-12-24
+[DEBUG] ✓ Shift 19 (Evening Shift) - Day Wednesday is ENABLED, processing
+[DEBUG] ✗ Employee 4 already has a shift on 2025-12-24, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 2 already has a shift on 2025-12-24, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 3 already has a shift on 2025-12-24, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 1 already has a shift on 2025-12-24, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ narchonai already has a shift on 2025-12-24, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ swetha already has a shift on 2025-12-24, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 8 already has a shift on 2025-12-24, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ sara already has a shift on 2025-12-24, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✓ Shift 17 (Morning Shift) - Day Thursday is ENABLED, processing
+[DEBUG] Checking Employee 4 (66) for shift 17 (Morning Shift) on 2025-12-25
+[DEBUG] Employee 4: weekly 24.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 4 on 2025-12-25
+[DEBUG] Checking Employee 2 (64) for shift 17 (Morning Shift) on 2025-12-25
+[DEBUG] Employee 2: weekly 24.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 2 on 2025-12-25
+[DEBUG] Checking Employee 3 (65) for shift 17 (Morning Shift) on 2025-12-25
+[DEBUG] Employee 3: weekly 24.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 3 on 2025-12-25
+[DEBUG] Checking Employee 1 (63) for shift 17 (Morning Shift) on 2025-12-25
+[DEBUG] Employee 1: weekly 24.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 1 on 2025-12-25
+[DEBUG] Checking narchonai (113) for shift 17 (Morning Shift) on 2025-12-25
+[DEBUG] narchonai: weekly 24.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for narchonai on 2025-12-25
+[DEBUG] ✓ Shift 18 (Afternoon Shift) - Day Thursday is ENABLED, processing
+[DEBUG] ✗ Employee 4 already has a shift on 2025-12-25, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 2 already has a shift on 2025-12-25, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 3 already has a shift on 2025-12-25, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 1 already has a shift on 2025-12-25, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ narchonai already has a shift on 2025-12-25, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ swetha already has a shift on 2025-12-25, skipping (NO DOUBLE SHIFTS)
+[DEBUG] Checking Employee 8 (70) for shift 18 (Afternoon Shift) on 2025-12-25
+[DEBUG] Employee 8: weekly 24.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 8 on 2025-12-25
+[DEBUG] ✗ sara already has a shift on 2025-12-25, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✓ Shift 19 (Evening Shift) - Day Thursday is ENABLED, processing
+[DEBUG] ✗ Employee 4 already has a shift on 2025-12-25, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 2 already has a shift on 2025-12-25, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 3 already has a shift on 2025-12-25, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 1 already has a shift on 2025-12-25, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ narchonai already has a shift on 2025-12-25, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ swetha already has a shift on 2025-12-25, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 8 already has a shift on 2025-12-25, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ sara already has a shift on 2025-12-25, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✓ Shift 17 (Morning Shift) - Day Friday is ENABLED, processing
+[DEBUG] Checking Employee 4 (66) for shift 17 (Morning Shift) on 2025-12-26
+[DEBUG] Employee 4: weekly 32.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 4 on 2025-12-26
+[DEBUG] Checking Employee 2 (64) for shift 17 (Morning Shift) on 2025-12-26
+[DEBUG] Employee 2: weekly 32.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 2 on 2025-12-26
+[DEBUG] Checking Employee 3 (65) for shift 17 (Morning Shift) on 2025-12-26
+[DEBUG] Employee 3: weekly 32.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 3 on 2025-12-26
+[DEBUG] Checking Employee 1 (63) for shift 17 (Morning Shift) on 2025-12-26
+[DEBUG] Employee 1: weekly 32.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 1 on 2025-12-26
+[DEBUG] Checking narchonai (113) for shift 17 (Morning Shift) on 2025-12-26
+[DEBUG] narchonai: weekly 32.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for narchonai on 2025-12-26
+[DEBUG] ✓ Shift 18 (Afternoon Shift) - Day Friday is ENABLED, processing
+[DEBUG] ✗ Employee 4 already has a shift on 2025-12-26, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 2 already has a shift on 2025-12-26, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 3 already has a shift on 2025-12-26, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 1 already has a shift on 2025-12-26, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ narchonai already has a shift on 2025-12-26, skipping (NO DOUBLE SHIFTS)
+[DEBUG] Checking swetha (114) for shift 18 (Afternoon Shift) on 2025-12-26
+[DEBUG] swetha: weekly 32.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for swetha on 2025-12-26
+[DEBUG] Checking Employee 8 (70) for shift 18 (Afternoon Shift) on 2025-12-26
+[DEBUG] Employee 8: weekly 32.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for Employee 8 on 2025-12-26
+[DEBUG] Checking sara (115) for shift 18 (Afternoon Shift) on 2025-12-26
+[DEBUG] sara: weekly 32.0+8.0<=40.0, daily 0.0+8.0<=8.0
+[DEBUG] ✓ Creating schedule for sara on 2025-12-26
+[DEBUG] ✓ Shift 19 (Evening Shift) - Day Friday is ENABLED, processing
+[DEBUG] ✗ Employee 4 already has a shift on 2025-12-26, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 2 already has a shift on 2025-12-26, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 3 already has a shift on 2025-12-26, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 1 already has a shift on 2025-12-26, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ narchonai already has a shift on 2025-12-26, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ swetha already has a shift on 2025-12-26, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Employee 8 already has a shift on 2025-12-26, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ sara already has a shift on 2025-12-26, skipping (NO DOUBLE SHIFTS)
+[DEBUG] ✗ Shift 17 (Morning Shift) - Day Saturday is disabled, skipping
+[DEBUG] ✗ Shift 18 (Afternoon Shift) - Day Saturday is disabled, skipping
+[DEBUG] ✗ Shift 19 (Evening Shift) - Day Saturday is disabled, skipping
+[DEBUG] ✗ Shift 17 (Morning Shift) - Day Sunday is disabled, skipping
+[DEBUG] ✗ Shift 18 (Afternoon Shift) - Day Sunday is disabled, skipping
+[DEBUG] ✗ Shift 19 (Evening Shift) - Day Sunday is disabled, skipping
+INFO:     127.0.0.1:61712 - "POST /schedules/generate?start_date=2025-12-22&end_date=2025-12-28&regenerate=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61712 - "GET /schedules?start_date=2025-12-22&end_date=2025-12-28 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61712 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61712 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64142 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63419 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63533 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58476 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63908 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64756 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60310 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50065 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57464 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53158 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51236 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59617 - "OPTIONS /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59617 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63086 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52190 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60183 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65299 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53043 - "OPTIONS /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53043 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62084 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53948 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54448 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57128 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50364 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52722 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63520 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52987 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51919 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50723 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64814 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60357 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49321 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65289 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63706 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54695 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58863 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63829 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49349 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58443 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49856 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57399 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58525 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62370 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56731 - "OPTIONS /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56731 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57355 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54342 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60630 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55020 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63849 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56423 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62208 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52188 - "OPTIONS /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52188 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50875 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54472 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49921 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55227 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59093 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64304 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62407 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54823 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59969 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62149 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63134 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60347 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57444 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54179 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59590 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52804 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53253 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52103 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63356 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63994 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57433 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61074 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57557 - "OPTIONS /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57557 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53836 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55964 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51428 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59622 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55258 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59828 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62716 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62361 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57416 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59572 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59026 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62857 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56958 - "OPTIONS /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56958 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54127 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52045 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54555 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59092 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53313 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56870 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63901 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49666 - "OPTIONS /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49666 - "OPTIONS /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49666 - "OPTIONS /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49666 - "OPTIONS /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49666 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49666 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49666 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49666 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58756 - "OPTIONS /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58989 - "OPTIONS /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49666 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58989 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58756 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58989 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58989 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58756 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49666 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58989 - "OPTIONS /schedules?start_date=2025-12-22&end_date=2025-12-28 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61322 - "OPTIONS /calendar/holidays?year=2025&month=12 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59627 - "OPTIONS /schedules?start_date=2025-12-22&end_date=2025-12-28 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57870 - "OPTIONS /calendar/holidays?year=2025&month=12 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58756 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59627 - "GET /calendar/holidays?year=2025&month=12 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59627 - "GET /calendar/holidays?year=2025&month=12 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57870 - "GET /schedules?start_date=2025-12-22&end_date=2025-12-28 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57870 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59627 - "GET /schedules?start_date=2025-12-22&end_date=2025-12-28 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59627 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62772 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51287 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51287 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51287 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51287 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52443 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56293 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60986 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52443 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52443 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60101 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62651 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60101 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62651 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62651 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60101 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64257 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62651 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49181 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49181 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49181 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49181 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49181 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49181 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58523 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56365 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49181 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49181 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56365 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58523 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56365 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56365 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58523 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49181 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58523 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56365 - "GET /calendar/holidays?year=2025&month=12 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56365 - "GET /calendar/holidays?year=2025&month=12 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49181 - "GET /schedules?start_date=2025-12-22&end_date=2025-12-28 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49181 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56365 - "GET /schedules?start_date=2025-12-22&end_date=2025-12-28 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56365 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54330 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54330 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54330 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54330 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54330 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53342 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65163 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54330 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54330 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65163 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53342 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65163 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54330 - "GET /calendar/holidays?year=2025&month=12 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54330 - "GET /calendar/holidays?year=2025&month=12 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53342 - "GET /schedules?start_date=2025-12-22&end_date=2025-12-28 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53342 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54330 - "GET /schedules?start_date=2025-12-22&end_date=2025-12-28 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54330 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54330 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53342 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65163 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53342 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53342 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65163 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54330 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53342 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53342 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54330 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65163 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54330 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54330 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65163 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53342 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54330 - "GET /calendar/holidays?year=2025&month=12 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54330 - "GET /calendar/holidays?year=2025&month=12 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65163 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53342 - "GET /schedules?start_date=2025-12-22&end_date=2025-12-28 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53342 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65163 - "GET /schedules?start_date=2025-12-22&end_date=2025-12-28 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65163 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65163 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53342 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54330 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53342 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53342 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54330 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65163 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54330 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53342 - "GET /calendar/holidays?year=2025&month=12 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53342 - "GET /calendar/holidays?year=2025&month=12 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65163 - "GET /schedules?start_date=2025-12-22&end_date=2025-12-28 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65163 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53342 - "GET /schedules?start_date=2025-12-22&end_date=2025-12-28 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53342 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53342 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53342 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53342 - "OPTIONS /overtime-requests?status=PENDING HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64252 - "OPTIONS /overtime-requests?status=PENDING HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64252 - "GET /overtime-requests?status=PENDING HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64252 - "GET /overtime-requests?status=PENDING HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64252 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53342 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64252 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53342 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53342 - "GET /calendar/holidays?year=2025&month=12 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53342 - "GET /calendar/holidays?year=2025&month=12 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64252 - "GET /schedules?start_date=2025-12-22&end_date=2025-12-28 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64252 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53342 - "GET /schedules?start_date=2025-12-22&end_date=2025-12-28 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53342 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53342 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53342 - "OPTIONS /schedules?start_date=2025-12-29&end_date=2026-01-04 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59825 - "GET /calendar/holidays?year=2025&month=12 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59825 - "OPTIONS /calendar/holidays?year=2026&month=1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59825 - "GET /calendar/holidays?year=2026&month=1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53342 - "GET /schedules?start_date=2025-12-29&end_date=2026-01-04 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53342 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53342 - "OPTIONS /schedules?start_date=2026-01-05&end_date=2026-01-11 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59825 - "GET /calendar/holidays?year=2026&month=1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53342 - "GET /schedules?start_date=2026-01-05&end_date=2026-01-11 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53342 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57608 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50709 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55572 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59582 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53881 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53302 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53830 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55937 - "OPTIONS /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55937 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54017 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62895 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54637 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59364 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58394 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62794 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55357 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49317 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64942 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60872 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59849 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53523 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53523 - "OPTIONS /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53523 - "OPTIONS /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53523 - "OPTIONS /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53523 - "OPTIONS /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53523 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53523 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53523 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53523 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53523 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57161 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64004 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57161 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57161 - "OPTIONS /schedules?start_date=2025-12-22&end_date=2025-12-28 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64004 - "OPTIONS /calendar/holidays?year=2025&month=12 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53523 - "OPTIONS /schedules?start_date=2025-12-22&end_date=2025-12-28 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53523 - "GET /calendar/holidays?year=2025&month=12 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53523 - "GET /calendar/holidays?year=2025&month=12 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64004 - "GET /schedules?start_date=2025-12-22&end_date=2025-12-28 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64004 - "OPTIONS /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64004 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53523 - "GET /schedules?start_date=2025-12-22&end_date=2025-12-28 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53523 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63227 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57579 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51965 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57579 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53192 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63503 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65107 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65107 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63391 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65107 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63391 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63391 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65107 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58572 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65107 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65107 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58572 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63391 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60894 - "GET /calendar/holidays?year=2025&month=12 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60894 - "GET /calendar/holidays?year=2025&month=12 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58572 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65107 - "GET /schedules?start_date=2025-12-22&end_date=2025-12-28 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65107 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58572 - "GET /schedules?start_date=2025-12-22&end_date=2025-12-28 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58572 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51018 - "OPTIONS /schedules?start_date=2025-12-29&end_date=2026-01-04 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59548 - "GET /calendar/holidays?year=2025&month=12 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59548 - "OPTIONS /calendar/holidays?year=2026&month=1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59548 - "GET /calendar/holidays?year=2026&month=1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51018 - "GET /schedules?start_date=2025-12-29&end_date=2026-01-04 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51018 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51018 - "OPTIONS /schedules?start_date=2026-01-05&end_date=2026-01-11 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59548 - "GET /calendar/holidays?year=2026&month=1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51018 - "GET /schedules?start_date=2026-01-05&end_date=2026-01-11 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51018 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60895 - "OPTIONS /schedules?start_date=2026-01-12&end_date=2026-01-18 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60895 - "GET /calendar/holidays?year=2026&month=1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60895 - "GET /schedules?start_date=2026-01-12&end_date=2026-01-18 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60895 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58158 - "GET /calendar/holidays?year=2026&month=1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49296 - "GET /schedules?start_date=2026-01-05&end_date=2026-01-11 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49296 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58158 - "GET /calendar/holidays?year=2025&month=12 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58158 - "GET /calendar/holidays?year=2026&month=1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49296 - "GET /schedules?start_date=2025-12-29&end_date=2026-01-04 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49296 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49296 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58158 - "GET /calendar/holidays?year=2025&month=12 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49296 - "GET /schedules?start_date=2025-12-22&end_date=2025-12-28 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49296 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49296 - "OPTIONS /schedules?start_date=2025-12-15&end_date=2025-12-21 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58158 - "GET /calendar/holidays?year=2025&month=12 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49296 - "GET /schedules?start_date=2025-12-15&end_date=2025-12-21 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49296 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58158 - "GET /calendar/holidays?year=2025&month=12 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49296 - "GET /schedules?start_date=2025-12-22&end_date=2025-12-28 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49296 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58158 - "GET /calendar/holidays?year=2025&month=12 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58158 - "GET /calendar/holidays?year=2026&month=1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49296 - "GET /schedules?start_date=2025-12-29&end_date=2026-01-04 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49296 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58158 - "GET /calendar/holidays?year=2026&month=1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49296 - "GET /schedules?start_date=2026-01-05&end_date=2026-01-11 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49296 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65484 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57589 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62837 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50987 - "OPTIONS /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50987 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53896 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61800 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54603 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49861 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49666 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53174 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55371 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63891 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65363 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56047 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53785 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53073 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63170 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62522 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62522 - "OPTIONS /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62522 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62522 - "OPTIONS /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62522 - "OPTIONS /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62522 - "OPTIONS /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62522 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62522 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62522 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62522 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62522 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62522 - "OPTIONS /schedules?start_date=2025-12-22&end_date=2025-12-28 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62522 - "OPTIONS /calendar/holidays?year=2025&month=12 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62522 - "OPTIONS /schedules?start_date=2025-12-22&end_date=2025-12-28 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62522 - "OPTIONS /calendar/holidays?year=2025&month=12 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62522 - "GET /schedules?start_date=2025-12-22&end_date=2025-12-28 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62522 - "GET /calendar/holidays?year=2025&month=12 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62522 - "GET /schedules?start_date=2025-12-22&end_date=2025-12-28 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62522 - "OPTIONS /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62522 - "GET /calendar/holidays?year=2025&month=12 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62522 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62522 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56970 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65082 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52430 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57268 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56235 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50467 - "OPTIONS /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50467 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58115 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64241 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51967 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53128 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53937 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59668 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55479 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55985 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58132 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64523 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53101 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50599 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62708 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53826 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57973 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53048 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60743 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61436 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53222 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60077 - "OPTIONS /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60077 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49666 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55615 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52634 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57092 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54911 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59546 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61711 - "OPTIONS /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50307 - "OPTIONS /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60306 - "OPTIONS /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61711 - "OPTIONS /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50307 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58599 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61711 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58599 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58599 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58599 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58599 - "OPTIONS /roles/22 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58599 - "GET /roles/22 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56442 - "OPTIONS /overtime-requests?status=PENDING HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56442 - "OPTIONS /overtime-requests?status=PENDING HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56442 - "GET /overtime-requests?status=PENDING HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56442 - "GET /overtime-requests?status=PENDING HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56442 - "OPTIONS /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63265 - "OPTIONS /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56442 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63265 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50060 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49184 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57040 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57040 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57040 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57040 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57040 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57040 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50525 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53092 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57040 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53028 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53028 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53028 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53028 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53028 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63698 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53093 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63698 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53093 - "OPTIONS /schedules?start_date=2025-12-22&end_date=2025-12-28 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53028 - "OPTIONS /calendar/holidays?year=2025&month=12 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60705 - "OPTIONS /schedules?start_date=2025-12-22&end_date=2025-12-28 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53028 - "OPTIONS /calendar/holidays?year=2025&month=12 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60705 - "GET /calendar/holidays?year=2025&month=12 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60705 - "GET /calendar/holidays?year=2025&month=12 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63698 - "GET /schedules?start_date=2025-12-22&end_date=2025-12-28 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63698 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60705 - "GET /schedules?start_date=2025-12-22&end_date=2025-12-28 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60705 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60705 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60705 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60705 - "GET /overtime-requests?status=PENDING HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60705 - "GET /overtime-requests?status=PENDING HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60705 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49983 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60705 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49983 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49983 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60705 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52577 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49983 - "GET /calendar/holidays?year=2025&month=12 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60705 - "GET /roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49983 - "GET /calendar/holidays?year=2025&month=12 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52577 - "GET /schedules?start_date=2025-12-22&end_date=2025-12-28 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52577 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60705 - "GET /schedules?start_date=2025-12-22&end_date=2025-12-28 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60705 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56841 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55105 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52805 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50883 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63546 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62972 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60449 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62258 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60672 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59911 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58160 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58967 - "OPTIONS /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58967 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59110 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62746 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52623 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50301 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58328 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55453 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55706 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60746 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55418 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63166 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52742 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54519 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55615 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51341 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50194 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58858 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61454 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50328 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62937 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60889 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61606 - "OPTIONS /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61606 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51999 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60555 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62783 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61505 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51872 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58974 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65050 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55907 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55261 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63461 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58636 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49331 - "OPTIONS /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49331 - "OPTIONS /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49331 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49331 - "OPTIONS /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49331 - "OPTIONS /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49331 - "OPTIONS /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49331 - "OPTIONS /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49331 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49331 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49331 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49331 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49331 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60591 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55257 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55472 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60744 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55041 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55472 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60744 - "GET /employees?show_inactive=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55041 - "GET /leave-requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55041 - "OPTIONS /attendance?start_date=2025-12-25&end_date=2025-12-25 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60744 - "OPTIONS /attendance?start_date=2025-12-25&end_date=2025-12-25 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60744 - "GET /attendance?start_date=2025-12-25&end_date=2025-12-25 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60744 - "GET /attendance?start_date=2025-12-25&end_date=2025-12-25 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60744 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60083 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52131 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50682 - "OPTIONS /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50682 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50682 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57606 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59207 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61256 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60877 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60877 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53987 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54838 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53031 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60826 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61080 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61080 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53797 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62499 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62499 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49705 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59574 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59574 - "GET /notifications HTTP/1.1" 200 OK
+WARNING:  WatchFiles detected changes in 'app/main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [133986]
+INFO:     Started server process [185206]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+
+============================================================
+Running database migrations on startup...
+============================================================
+✓ Column employee_id already exists
+✓ manager_id column already exists
+✓ comp_off_tracking already has earned_date column
+============================================================
+All migrations completed!
+============================================================
+
+INFO:     127.0.0.1:50569 - "GET /notifications HTTP/1.1" 200 OK
+WARNING:  WatchFiles detected changes in 'app/main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [185206]
+INFO:     Started server process [185466]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'app/main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [185466]
+INFO:     Started server process [185568]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+
+============================================================
+Running database migrations on startup...
+============================================================
+✓ Column employee_id already exists
+✓ manager_id column already exists
+✓ comp_off_tracking already has earned_date column
+============================================================
+All migrations completed!
+============================================================
+
+INFO:     127.0.0.1:51888 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51888 - "GET /notifications HTTP/1.1" 200 OK
+WARNING:  WatchFiles detected changes in 'app/main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [185568]
+INFO:     Started server process [185730]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'app/main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [185730]
+INFO:     Started server process [185870]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'app/main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [185870]
+INFO:     Started server process [185998]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'app/main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [185998]
+INFO:     Started server process [186099]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+
+============================================================
+Running database migrations on startup...
+============================================================
+✓ Column employee_id already exists
+✓ manager_id column already exists
+✓ comp_off_tracking already has earned_date column
+============================================================
+All migrations completed!
+============================================================
+
+INFO:     127.0.0.1:56426 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56426 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56426 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56426 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56426 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56426 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56426 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53276 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53276 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53276 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53276 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53276 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53276 - "GET /notifications HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [186099]
+INFO:     Stopping reloader process [129351]
